@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://weiliu.github.io/post/blog0/</loc>
+    <loc>http://weiliu.github.io/post/blog0/</loc>
     <lastmod>2021-09-05T00:38:13-07:00</lastmod>
   </url><url>
-    <loc>https://weiliu.github.io/</loc>
+    <loc>http://weiliu.github.io/</loc>
     <lastmod>2021-09-05T00:38:13-07:00</lastmod>
   </url><url>
-    <loc>https://weiliu.github.io/post/</loc>
+    <loc>http://weiliu.github.io/post/</loc>
     <lastmod>2021-09-05T00:38:13-07:00</lastmod>
   </url><url>
-    <loc>https://weiliu.github.io/categories/</loc>
+    <loc>http://weiliu.github.io/categories/</loc>
   </url><url>
-    <loc>https://weiliu.github.io/tags/</loc>
+    <loc>http://weiliu.github.io/tags/</loc>
   </url>
 </urlset>

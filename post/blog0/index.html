@@ -90,9 +90,9 @@ Hugo is a general-purpose website framework. Technically speaking, Hugo is a sta
 </code></pre>
 <h3 id="step-3-add-a-theme">Step 3: Add a Theme</h3>
 <pre><code>        download the theme from GitHub and add it to your sitebs themes directory
-        command: cd quickstart
-                 git init
-                 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+        command: $cd quickstart
+                 $git init
+                 $git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 </code></pre>
 <h3 id="step-4-add-some-content">Step 4: Add Some content</h3>
 <pre><code>        You can manually create content files (for example as content/&lt;CATEGORY&gt;/&lt;FILE&gt;.&lt;FORMAT&gt;) and provide metadata in them, however you can use the new command to do a few things for you (like add title and date)
@@ -101,7 +101,7 @@ Hugo is a general-purpose website framework. Technically speaking, Hugo is a sta
 </code></pre>
 <h3 id="step-5-start-the-hugo-server">Step 5: start the Hugo Server</h3>
 <pre><code>        Now, start the Hugo server with drafts enabled
-        hugo server -D
+        $ hugo server 
         Feel free to edit or add new content and simply refresh in browser to see changes quickly (You might need to force refresh in webbrowser, something like Ctrl-R usually works).
 </code></pre>
 <h3 id="step-6-customize-the-theme">Step 6: Customize the Theme</h3>
@@ -117,6 +117,23 @@ Hugo is a general-purpose website framework. Technically speaking, Hugo is a sta
 <pre><code>        It is simple. Just call:
             hugo -D
         Output will be in ./public/ directory by default (-d/--destination flag to change it, or set publishdir in the config file).
+</code></pre>
+<h3 id="step-8-host-your-website-on-github-pages">Step 8: Host your website on GitHub Pages</h3>
+<pre><code>        First make sure you have repository with the name &quot;yourgithubusername.github.io&quot;.
+        $ cd public
+        $ git init
+        $ git add .
+        $ git remote add origin https://github.com/username/username.github.io.git
+        $ git commit -m “first commit”
+        $ git push origin master or $git push
+</code></pre>
+<h3 id="step-8-update-your-website">Step 8: Update your website</h3>
+<pre><code>        go to 'mysite' direcotry
+        $ hugo -d ../yougithubusername.github.io or $hugo
+        $ cd ../yougithubusername.github.io
+        $ git add .
+        $ git commit -m &quot;somechange&quot;
+        $ git push
 </code></pre>
 
   

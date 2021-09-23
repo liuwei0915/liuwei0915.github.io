@@ -6,27 +6,19 @@
     <description>Recent content in Posts on My Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Sep 2021 23:52:37 -0700</lastBuildDate><atom:link href="https://liuwei0915.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Sep 2021 15:30:49 -0700</lastBuildDate><atom:link href="https://liuwei0915.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Blog3</title>
-      <link>https://liuwei0915.github.io/post/blog3/</link>
-      <pubDate>Sun, 05 Sep 2021 23:52:37 -0700</pubDate>
-      
-      <guid>https://liuwei0915.github.io/post/blog3/</guid>
-      <description>title</description>
-    </item>
-    
-    <item>
-      <title>Blog1 - </title>
+      <title>Blog1-Markdown syntax and jump proxy Note</title>
       <link>https://liuwei0915.github.io/post/blog1/</link>
-      <pubDate>Sun, 05 Sep 2021 23:47:23 -0700</pubDate>
+      <pubDate>Wed, 22 Sep 2021 15:30:49 -0700</pubDate>
       
       <guid>https://liuwei0915.github.io/post/blog1/</guid>
-      <description>waitiing for update</description>
+      <description>Markdown cheatsheet 1. Paragraphs  Each line end with two or more spaces will cause skip line.  2. Headers,   Uses 1-6 hash characters (#) at the start of the line, corresponding to - .
+This is Header H2 with (##) This is Header H3 with (###) This is Header H5 with (#####)   User “Underlined” using equal signs (=) as and dashes (-) as in any number.</description>
     </item>
     
     <item>
-      <title>Blog0 - Hugo Basics</title>
+      <title>Blog0 - Hugo starts</title>
       <link>https://liuwei0915.github.io/post/blog0/</link>
       <pubDate>Sun, 05 Sep 2021 00:38:13 -0700</pubDate>
       

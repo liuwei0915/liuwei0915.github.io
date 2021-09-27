@@ -115,7 +115,7 @@ This is Header H2 with (##) This is Header H3 with (###) This is Header H5 with 
 </ol>
 </li>
 </ul>
-<h1 id="for-the-jump-proxy">For the Jump proxy:</h1>
+<h1 id="for-the-server-jump-proxy">For the server Jump proxy:</h1>
 <h2 id="step-1-create-public-and-private-keys">Step 1: Create public and private keys</h2>
 <pre tabindex="0"><code>    &lt;ssh-key-gen on local-host such as ~/.ssh&gt;
 </code></pre><h2 id="step-2-copy-the-public-key-to-remote-host-using-ssh-copy-id">Step 2: Copy the public key to remote-host using ssh-copy-id</h2>
@@ -132,7 +132,14 @@ HOST ssh
    Hostname ssh.csun.edu
 </code></pre><p>Then we can just do command :</p>
 <pre tabindex="0"><code>    ssh ssh
-</code></pre>
+</code></pre><h1 id="command-using-in-bash">command using in bash</h1>
+<ol>
+<li>command &gt; file: Send the stdout of command to file.</li>
+<li>command 1&gt; file: Send the stdout of command to file. Since stdout is FD 1, that&rsquo;s the number we put in front of the redirection operator. This is identical to the previous example, because FD 1 is the default for the &gt; operator.</li>
+<li>command &lt; file: Use the contents of file when command reads from stdin.</li>
+<li>command 0&lt; file: Use the contents of file when command reads from stdin, exactly as in the previous example, since FD 0 (stdin) is the default for the &lt; operator.</li>
+</ol>
+
   
   </div>
 </article>

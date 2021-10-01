@@ -132,7 +132,13 @@ HOST ssh
    Hostname ssh.csun.edu
 </code></pre><p>Then we can just do command :</p>
 <pre tabindex="0"><code>    ssh ssh
-</code></pre><h1 id="command-using-in-bash">command using in bash</h1>
+</code></pre><h2 id="additionally">additionally</h2>
+<ul>
+<li>Adding or changing a passphrase
+<pre tabindex="0"><code>ssh-keygen -p -f ~/.ssh/id_ed25519
+</code></pre></li>
+</ul>
+<h1 id="command-using-in-bash">command using in bash</h1>
 <ol>
 <li>command &gt; file: Send the stdout of command to file.</li>
 <li>command 1&gt; file: Send the stdout of command to file. Since stdout is FD 1, that&rsquo;s the number we put in front of the redirection operator. This is identical to the previous example, because FD 1 is the default for the &gt; operator.</li>

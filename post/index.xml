@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Sep 2021 23:54:02 -0700</lastBuildDate><atom:link href="https://liuwei0915.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Blog2 - Docker</title>
+      <title>Blog2 - Docker Start</title>
       <link>https://liuwei0915.github.io/post/blog2/</link>
       <pubDate>Mon, 27 Sep 2021 23:54:02 -0700</pubDate>
       
       <guid>https://liuwei0915.github.io/post/blog2/</guid>
-      <description>What is Docker? </description>
+      <description>What is Docker? Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. Because all of the containers share the services of a single operating system kernel, they use fewer resources than virtual machines.</description>
     </item>
     
     <item>

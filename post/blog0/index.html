@@ -16,7 +16,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Blog0 - Hugo starts" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Blog 0 Hugo starts what is the Hugo? Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again. Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your websitebs end users and an ideal writing experience for website authors." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://liuwei0915.github.io/post/blog0/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-09-05T00:38:13-07:00" />
@@ -25,7 +25,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Blog0 - Hugo starts"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Blog 0 Hugo starts what is the Hugo? Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again. Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your websitebs end users and an ideal writing experience for website authors."/>
 
   
   
@@ -77,7 +77,66 @@
 
   <div class="content" itemprop="articleBody">
   
-    <!-- raw HTML omitted -->
+    <h1 id="blog-0-hugo-starts">Blog 0 Hugo starts</h1>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg" alt="hugo"></p>
+<h2 id="what-is-the-hugo">what is the Hugo?</h2>
+<p>Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
+Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your websitebs end users and an ideal writing experience for website authors.</p>
+<h2 id="how-to-quick-start-hugo-on-mac">How to QUICK start hugo on MAC?</h2>
+<h3 id="step-1-install-hugo">Step 1: Install Hugo</h3>
+<pre><code>        Simply type command 'brew install hugo' or 'port install hugo'
+        To verify your installation, type 'hugo version'
+</code></pre>
+<h3 id="step-2-create-a-new-site">Step 2: Create a New Site</h3>
+<pre><code>        'hugo new site quickstart'
+</code></pre>
+<h3 id="step-3-add-a-theme">Step 3: Add a Theme</h3>
+<pre><code>        download the theme from GitHub and add it to your sitebs themes directory
+        command: $cd quickstart
+                 $git init
+                 $git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+</code></pre>
+<h3 id="step-4-add-some-content">Step 4: Add Some content</h3>
+<pre><code>        You can manually create content files (for example as content/&lt;CATEGORY&gt;/&lt;FILE&gt;.&lt;FORMAT&gt;) and provide metadata in them, however you can use the new command to do a few things for you (like add title and date)
+        hugo new posts/my-first-post.md
+        then you can use editor like vi, vim or nano to create the content
+</code></pre>
+<h3 id="step-5-start-the-hugo-server">Step 5: start the Hugo Server</h3>
+<pre><code>        Now, start the Hugo server with drafts enabled
+        $ hugo server 
+        Feel free to edit or add new content and simply refresh in browser to see changes quickly (You might need to force refresh in webbrowser, something like Ctrl-R usually works).
+</code></pre>
+<h3 id="step-6-customize-the-theme">Step 6: Customize the Theme</h3>
+<pre><code>        Site Configuration 
+        Open up config.toml in a text editor:
+            baseURL = &quot;https://example.org/&quot;
+            languageCode = &quot;en-us&quot;
+            itle = &quot;My New Hugo Site&quot;
+            theme = &quot;ananke&quot;
+        Replace the title above with something more personal. Also, if you already have a domain ready, set the baseURL. Note that this value is not needed when running the local development server.
+</code></pre>
+<h3 id="step-7-build-static-pages">Step 7: Build static pages</h3>
+<pre><code>        It is simple. Just call:
+            hugo -D
+        Output will be in ./public/ directory by default (-d/--destination flag to change it, or set publishdir in the config file).
+</code></pre>
+<h3 id="step-8-host-your-website-on-github-pages">Step 8: Host your website on GitHub Pages</h3>
+<pre><code>        First make sure you have repository with the name &quot;yourgithubusername.github.io&quot;.
+        $ cd public
+        $ git init
+        $ git add .
+        $ git remote add origin https://github.com/username/username.github.io.git
+        $ git commit -m “first commit”
+        $ git push origin master or $git push
+</code></pre>
+<h3 id="step-9-update-your-website">Step 9: Update your website</h3>
+<pre><code>        go to 'mysite' direcotry
+        $ hugo -d ../yougithubusername.github.io
+        $ cd ../yougithubusername.github.io
+        $ git add .
+        $ git commit -m &quot;somechange&quot;
+        $ git push   
+</code></pre>
 
   
   </div>

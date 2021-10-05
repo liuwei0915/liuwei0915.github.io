@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Blog3 - Docker intereview extension | Wei Liu&#39;s Blog</title>
+  <link rel = 'canonical' href = 'https://liuwei0915.github.io/post/blog3/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Blog3 - Docker intereview extension" />
+<meta property="og:description" content="Docker related interview questions:  Explain what happends when an SRE executes the following command:  docker run --name inclass hello-world  docker run = run the command in a new container and build all intermediate image as needed. &ndash;name = Assign a name to the container which is &ldquo;inclass&rdquo; hello-world = the image to be used -p 9090:9090 = map local port 9090 to port 9090 inside the container -it = Container should have interactive terminal /bin/bash = run the bash command when the container is built   Explain what happens when a user types following into their browser:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://liuwei0915.github.io/post/blog3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-04T15:22:47-07:00" />
+<meta property="article:modified_time" content="2021-10-04T15:22:47-07:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Blog3 - Docker intereview extension"/>
+<meta name="twitter:description" content="Docker related interview questions:  Explain what happends when an SRE executes the following command:  docker run --name inclass hello-world  docker run = run the command in a new container and build all intermediate image as needed. &ndash;name = Assign a name to the container which is &ldquo;inclass&rdquo; hello-world = the image to be used -p 9090:9090 = map local port 9090 to port 9090 inside the container -it = Container should have interactive terminal /bin/bash = run the bash command when the container is built   Explain what happens when a user types following into their browser:"/>
+
+  
+  
+  
+  <link rel="stylesheet" href="https://liuwei0915.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://liuwei0915.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="https://liuwei0915.github.io">
+  
+    <div id="logo" style="background-image: url(https://liuwei0915.github.io/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>Wei Liu&#39;s Blog</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <div class="content" itemprop="articleBody">
+  
+    <h1 id="docker-related-interview-questions">Docker related interview questions:</h1>
+<ol>
+<li>Explain what happends when an SRE executes the following command:</li>
+</ol>
+<pre tabindex="0"><code>docker run --name inclass hello-world
+</code></pre><ul>
+<li>docker run = run the command in a new container and build all intermediate image as needed.</li>
+<li>&ndash;name = Assign a name to the container which is &ldquo;inclass&rdquo;</li>
+<li>hello-world = the image to be used</li>
+<li>-p 9090:9090 = map local port 9090 to port 9090 inside the container</li>
+<li>-it = Container should have interactive terminal</li>
+<li>/bin/bash = run the bash command when the container is built</li>
+</ul>
+<ol start="2">
+<li>
+<p>Explain what happens when a user types following into their browser:</p>
+<ul>
+<li><a href="https://www.domain.com/path/to/document?var=value;var=value#section">https://www.domain.com/path/to/document?var=value;var=value#section</a></li>
+</ul>
+<ul>
+<li>protocol: https</li>
+<li>userinfo: anonymous (implicit)</li>
+<li>server_name: <a href="http://www.domain.com">www.domain.com</a></li>
+<li>TCP port: 443 (implicit: defined by the protocol)</li>
+<li>path: /path/to/document</li>
+<li>query_string: var=value;var=value</li>
+<li>fragment: section</li>
+</ul>
+</li>
+<li>
+<p>Explain what is the difference between a container and a VM (virtual machine)?
+<img src="https://github.com/CIT384/class-material/blob/main/LectureNotes/Oct_4/container-VM.png?raw=true" alt="dockervm">
+VM:<br>
+It runs on top of an emulating software called the hypervisor which sit between the hardware and the
+virtual machine. The hypervisor is the key to enable virtualization. It manages the sharing of
+physical resources into virtual machines. Each virtual machine runs its own guest operating system.
+They are less agile and have low portability than containers.<br>
+Container:<br>
+It sits on the top of a physical server and its host operating system. They share a common operating
+system that requires care and feeding for bug fixes and patches. They are more agile and have high
+portability than virtual machines.</p>
+</li>
+</ol>
+<h1 id="dockerfile-starter">Dockerfile Starter</h1>
+<ul>
+<li>
+<p>Obtain a starting image for the Apache Web Server
+FROM httpd</p>
+</li>
+<li>
+<p>Set the working directory to match DocumentRoot                                <br>
+WORKDIR /usr/local/apache2/htdocs</p>
+</li>
+<li>
+<p>Copy your index.html file to DocumentRoot directory            <br>
+COPY index.html .</p>
+</li>
+<li>
+<p>Add in other directives as needed</p>
+</li>
+<li>
+<p>LABEL maintainer:&ldquo;<a href="mailto:Steven.Fitzgerald@csun.edu">Steven.Fitzgerald@csun.edu</a>&rdquo;</p>
+</li>
+<li>
+<p>RUN</p>
+</li>
+<li>
+<p>EXEC</p>
+</li>
+<li>
+<p>ADD</p>
+</li>
+<li>
+<p>COPY</p>
+</li>
+<li>
+<p>ENV</p>
+</li>
+<li>
+<p>EXPOSE</p>
+</li>
+<li>
+<p>STOPSIGNAL</p>
+</li>
+<li>
+<p>USER</p>
+</li>
+<li>
+<p>VOLUME</p>
+</li>
+<li>
+<p>ONBUILD<br>
+The <a href="https://github.com/CIT384/class-material/blob/main/LectureNotes/Oct_4/dockerfile.cit160">example</a></p>
+</li>
+</ul>
+<pre tabindex="0"><code>ARG VERSION=latest
+FROM busybox:$VERSION
+ARG VERSION
+RUN echo $VERSION &gt; image_version
+</code></pre>
+  
+  </div>
+</article>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Wei Liu&#39;s Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+</html>

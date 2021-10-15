@@ -96,7 +96,7 @@
 <pre tabindex="0"><code>docker run -it &lt;imageid or image name&gt; /bin/bash
 </code></pre></li>
 <li>Create a new container named simple-prometheus and expose port 9090:<br>
-$ docker run    -it -p 9090:9090 &ndash;name simple-prometheus ubuntu:18.04 /bin/bash<br>
+$ docker run -it -p 9090:9090 &ndash;name simple-prometheus ubuntu:18.04 /bin/bash<br>
 Breakdown of the command:
 <ul>
 <li>Docker run = Run a command in a new container</li>
@@ -121,6 +121,7 @@ Breakdown of the command:
 <pre><code>```
 docker build -t &lt;name&gt; .
 ```
+. means current directory file. 
 </code></pre>
 
   

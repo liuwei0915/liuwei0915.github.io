@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Wei Liu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Oct 2021 15:22:47 -0700</lastBuildDate><atom:link href="https://liuwei0915.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Oct 2021 18:20:21 -0700</lastBuildDate><atom:link href="https://liuwei0915.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog4 - Applcation deployment --ansible and dockerfile</title>
+      <link>https://liuwei0915.github.io/post/blog4/</link>
+      <pubDate>Mon, 11 Oct 2021 18:20:21 -0700</pubDate>
+      
+      <guid>https://liuwei0915.github.io/post/blog4/</guid>
+      <description>Ansible  Ansible is Simpel IT Automation Ansible is an open source IT automation engine that automates provisioning, configuration management, application deployment, orchestration, and many other IT processes.
+Playbook is the main thing of ansible. An Ansible playbook is an organized unit of scripts that defines work for a server configuration managed by the automation tool Ansible. Ansible plays are written in YAML. Every play is created by an administrator with environment-specific parameters for the target machines; there are no standard plays.</description>
+    </item>
+    
     <item>
       <title>Blog3 - Docker intereview extension</title>
       <link>https://liuwei0915.github.io/post/blog3/</link>

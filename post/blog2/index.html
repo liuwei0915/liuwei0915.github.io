@@ -118,11 +118,16 @@ Breakdown of the command:
 </code></pre></li>
 </ul>
 <h1 id="build-an-image-from-dockerfile">Build an image from Dockerfile</h1>
-<pre><code>```
-docker build -t &lt;name&gt; .
-```
-. means current directory file. 
-</code></pre>
+<p>Touch a dockerfile, and put the dockerfile in the current directory<br>
+There is an example in github: <a href="https://github.com/CIT384/z_containerized-website-liuwei0915">dockerfile</a></p>
+<pre tabindex="0"><code>    docker build -t &lt;name&gt; .  
+</code></pre><p>. means current directory file.</p>
+<h1 id="specific-options">specific options</h1>
+<p>&quot; &ndash;rm&quot; which means clean up flag</p>
+<pre tabindex="0"><code>$ docker run --rm ubuntu:18.04 bash
+</code></pre><p>In the command above, &ndash;rm will romve the container automatically once you exit the container.</p>
+<h1 id="last-the-docker-cheatsheet">Last the Docker cheatsheet</h1>
+<p><a href="https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf">https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf</a></p>
 
   
   </div>

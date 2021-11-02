@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Blog7 - Javascript | Wei Liu&#39;s Blog</title>
+  <link rel = 'canonical' href = 'https://liuwei0915.github.io/post/blog7/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Blog7 - Javascript" />
+<meta property="og:description" content="what is javascript? JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://liuwei0915.github.io/post/blog7/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-11-01T15:22:20-07:00" />
+<meta property="article:modified_time" content="2021-11-01T15:22:20-07:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Blog7 - Javascript"/>
+<meta name="twitter:description" content="what is javascript? JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area."/>
+
+  
+  
+  
+  <link rel="stylesheet" href="https://liuwei0915.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://liuwei0915.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="https://liuwei0915.github.io">
+  
+    <div id="logo" style="background-image: url(https://liuwei0915.github.io/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>Wei Liu&#39;s Blog</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <div class="content" itemprop="articleBody">
+  
+    <h1 id="what-is-javascript">what is javascript?</h1>
+<p>JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area.</p>
+<p>JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else. (Okay, not everything, but it is amazing what you can achieve with a few lines of JavaScript code.)<br>
+<img src="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/execution.png" alt="java"></p>
+<h1 id="dynamic-versus-static-code">Dynamic versus static code</h1>
+<p>The word dynamic is used to describe both client-side JavaScript, and server-side languages — it refers to the ability to update the display of a web page/app to show different things in different circumstances, generating new content as required. Server-side code dynamically generates new content on the server, e.g. pulling data from a database, whereas client-side JavaScript dynamically generates new content inside the browser on the client, e.g. creating a new HTML table, filling it with data requested from the server, then displaying the table in a web page shown to the user. The meaning is slightly different in the two contexts, but related, and both approaches (server-side and client-side) usually work together.</p>
+<p>A web page with no dynamically updating content is referred to as static — it just shows the same content all the time.</p>
+<h1 id="how-do-you-add-javascript-to-your-page">How do you add JavaScript to your page?</h1>
+<p>JavaScript is applied to your HTML page in a similar manner to CSS. Whereas CSS uses <!-- raw HTML omitted --> elements to apply external stylesheets and <!-- raw HTML omitted --> elements to apply internal stylesheets to HTML, JavaScript only needs one friend in the world of HTML — the <!-- raw HTML omitted --> element. Let&rsquo;s learn how this works.</p>
+<ol>
+<li>Internal JavaScript</li>
+</ol>
+<ul>
+<li>Go to your text editor and add the following in your head — just before your closing <!-- raw HTML omitted --> tag:</li>
+</ul>
+<pre tabindex="0"><code>&lt;script&gt;
+
+  // JavaScript goes here
+
+&lt;/script&gt;
+</code></pre><ul>
+<li>Now we&rsquo;ll add some JavaScript inside our <!-- raw HTML omitted --> element to make the page do something more interesting — add the following code just below the &ldquo;// JavaScript goes here&rdquo; line:</li>
+</ul>
+<pre tabindex="0"><code>document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+  function createParagraph() {
+    let para = document.createElement('p');
+    para.textContent = 'You clicked the button!';
+    document.body.appendChild(para);
+  }
+
+  const buttons = document.querySelectorAll('button');
+
+  for(let i = 0; i &lt; buttons.length ; i++) {
+    buttons[i].addEventListener('click', createParagraph);
+  }
+});
+</code></pre><ol start="2">
+<li>External JavaScript</li>
+</ol>
+<ul>
+<li>First, create a new file in the same directory as your sample HTML file. Call it script.js — make sure it has that .js filename extension, as that&rsquo;s how it is recognized as JavaScript.</li>
+<li>Replace your current <!-- raw HTML omitted --> element with the following:</li>
+</ul>
+<pre tabindex="0"><code>&lt;script src=&quot;script.js&quot; defer&gt;&lt;/script&gt;
+</code></pre><ul>
+<li>Inside script.js, add the following script:</li>
+</ul>
+<pre tabindex="0"><code>function createParagraph() {
+  let para = document.createElement('p');
+  para.textContent = 'You clicked the button!';
+  document.body.appendChild(para);
+}
+
+const buttons = document.querySelectorAll('button');
+
+for(let i = 0; i &lt; buttons.length ; i++) {
+  buttons[i].addEventListener('click', createParagraph);
+}
+</code></pre><ol start="3">
+<li>Inline JavaScript handlers
+Note that sometimes you&rsquo;ll come across bits of actual JavaScript code living inside HTML. It might look something like this:</li>
+</ol>
+<pre tabindex="0"><code>function createParagraph() {
+  let para = document.createElement('p');
+  para.textContent = 'You clicked the button!';
+  document.body.appendChild(para);
+}
+</code></pre><pre tabindex="0"><code>&lt;button onclick=&quot;createParagraph()&quot;&gt;Click me!&lt;/button&gt;
+</code></pre>
+  
+  </div>
+</article>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Wei Liu&#39;s Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+</html>

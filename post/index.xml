@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Wei Liu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Oct 2021 13:59:34 -0700</lastBuildDate><atom:link href="https://liuwei0915.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Nov 2021 15:22:20 -0700</lastBuildDate><atom:link href="https://liuwei0915.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog7 - Javascript</title>
+      <link>https://liuwei0915.github.io/post/blog7/</link>
+      <pubDate>Mon, 01 Nov 2021 15:22:20 -0700</pubDate>
+      
+      <guid>https://liuwei0915.github.io/post/blog7/</guid>
+      <description>what is javascript? JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area.</description>
+    </item>
+    
     <item>
       <title>Blog6 - Docker Compose with LAMP on Windows or Mac</title>
       <link>https://liuwei0915.github.io/post/blog6/</link>

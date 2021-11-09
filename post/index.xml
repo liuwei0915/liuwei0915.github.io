@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Wei Liu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Nov 2021 15:22:20 -0700</lastBuildDate><atom:link href="https://liuwei0915.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Nov 2021 12:30:13 -0700</lastBuildDate><atom:link href="https://liuwei0915.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog8 Javascript notes </title>
+      <link>https://liuwei0915.github.io/post/blog8/</link>
+      <pubDate>Fri, 05 Nov 2021 12:30:13 -0700</pubDate>
+      
+      <guid>https://liuwei0915.github.io/post/blog8/</guid>
+      <description>Javascript Introduction  Methods Methods return information about an object, and are called by appending an instance with a period ., the method name, and parentheses. Libraries Libraries contain methods that can be called by appending the library name with a period ., the method name, and a set of parentheses. for example:  Math.random(); //Math is library random is method name; it will return a random number between 0-1. if youwanna get 0-100 then add *100 at the end.</description>
+    </item>
+    
     <item>
       <title>Blog7 - Javascript</title>
       <link>https://liuwei0915.github.io/post/blog7/</link>

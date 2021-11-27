@@ -23,7 +23,7 @@ Clouding computing model  infrastructure as software  are flexible can change mo
       <pubDate>Sat, 13 Nov 2021 14:11:15 -0800</pubDate>
       
       <guid>https://liuwei0915.github.io/posts/blog11/</guid>
-      <description></description>
+      <description>What is Object? There are only seven fundamental data types in JavaScript, and six of those are the primitive data types: string, number, boolean, null, undefined, and symbol. With the seventh type, objects, we open our code to more complex possibilities. We can use JavaScript objects to model real-world things, like a basketball, or we can use objects to build the data structures that make the web possible. JavaScript objects are containers storing related data and functionality, but that deceptively simple task is extremely powerful in practice.</description>
     </item>
     
     <item>

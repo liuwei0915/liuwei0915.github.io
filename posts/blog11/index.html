@@ -16,7 +16,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Blog11 - Javascript Note - Object" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="What is Object? There are only seven fundamental data types in JavaScript, and six of those are the primitive data types: string, number, boolean, null, undefined, and symbol. With the seventh type, objects, we open our code to more complex possibilities. We can use JavaScript objects to model real-world things, like a basketball, or we can use objects to build the data structures that make the web possible. JavaScript objects are containers storing related data and functionality, but that deceptively simple task is extremely powerful in practice." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://liuwei0915.github.io/posts/blog11/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-11-13T14:11:15-08:00" />
@@ -25,7 +25,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Blog11 - Javascript Note - Object"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="What is Object? There are only seven fundamental data types in JavaScript, and six of those are the primitive data types: string, number, boolean, null, undefined, and symbol. With the seventh type, objects, we open our code to more complex possibilities. We can use JavaScript objects to model real-world things, like a basketball, or we can use objects to build the data structures that make the web possible. JavaScript objects are containers storing related data and functionality, but that deceptively simple task is extremely powerful in practice."/>
 
   
   
@@ -139,7 +139,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fblog11%2f&name=Blog11%20-%20Javascript%20Note%20-%20Object&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fblog11%2f&name=Blog11%20-%20Javascript%20Note%20-%20Object&description=What%20is%20Object%3f%20There%20are%20only%20seven%20fundamental%20data%20types%20in%20JavaScript%2c%20and%20six%20of%20those%20are%20the%20primitive%20data%20types%3a%20string%2c%20number%2c%20boolean%2c%20null%2c%20undefined%2c%20and%20symbol.%20With%20the%20seventh%20type%2c%20objects%2c%20we%20open%20our%20code%20to%20more%20complex%20possibilities.%20We%20can%20use%20JavaScript%20objects%20to%20model%20real-world%20things%2c%20like%20a%20basketball%2c%20or%20we%20can%20use%20objects%20to%20build%20the%20data%20structures%20that%20make%20the%20web%20possible.%20JavaScript%20objects%20are%20containers%20storing%20related%20data%20and%20functionality%2c%20but%20that%20deceptively%20simple%20task%20is%20extremely%20powerful%20in%20practice." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -153,7 +153,27 @@
     </div>
     
     <div id="toc">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#creating-object-literals">Creating Object Literals</a></li>
+    <li><a href="#1-accessing-properties">1. Accessing Properties</a></li>
+    <li><a href="#2-bracket-notation">2. Bracket Notation</a></li>
+    <li><a href="#property-assignment">Property Assignment</a></li>
+    <li><a href="#methods">Methods</a></li>
+    <li><a href="#nested-objects">Nested Objects</a></li>
+    <li><a href="#pass-by-reference">Pass By Reference</a></li>
+    <li><a href="#looping-through-objects">Looping Through Objects</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#this-keyword">this Keyword</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#getters">Getters</a></li>
+    <li><a href="#factory-functions">Factory Functions</a></li>
+    <li><a href="#property-value-shorthand">Property Value Shorthand</a></li>
+    <li><a href="#javascript-destructuring-assignment-shorthand-syntax">JavaScript destructuring assignment shorthand syntax</a></li>
+  </ul>
+</nav>
     </div>
     
   </span>
@@ -182,7 +202,182 @@
   
     
     <div class="content" itemprop="articleBody">
-      
+      <h1 id="what-is-object">What is Object?</h1>
+<p>There are only seven fundamental data types in JavaScript, and six of those are the primitive data types: string, number, boolean, null, undefined, and symbol. With the seventh type, objects, we open our code to more complex possibilities. We can use JavaScript objects to model real-world things, like a basketball, or we can use objects to build the data structures that make the web possible.   JavaScript objects are containers storing related data and functionality, but that deceptively simple task is extremely powerful in practice. You’ve been using the power of objects all along, but now it’s time to understand the mechanics of objects and start making your own!
+<img src="https://content.codecademy.com/courses/learn-javascript-objects/javascript_illo.svg" alt="object"></p>
+<h2 id="creating-object-literals">Creating Object Literals</h2>
+<p>Objects can be assigned to variables just like any JavaScript type</p>
+<pre tabindex="0"><code>// An object literal with two key-value pairs
+let spaceship = {
+  'Fuel Type': 'diesel',
+  color: 'silver'
+};
+</code></pre><p><img src="https://content.codecademy.com/courses/learn-javascript-objects/objectliteraldiagram.svg" alt="literal"></p>
+<h2 id="1-accessing-properties">1. Accessing Properties</h2>
+<pre tabindex="0"><code>let spaceship = {
+  homePlanet: 'Earth',
+  color: 'silver'
+};
+spaceship.homePlanet; // Returns 'Earth',
+spaceship.color; // Returns 'silver',
+</code></pre><h2 id="2-bracket-notation">2. Bracket Notation</h2>
+<p>The second way to access a key’s value is by using bracket notation, [ ].</p>
+<pre tabindex="0"><code>let spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  'Active Duty': true,
+  homePlanet: 'Earth',
+  numCrew: 5
+};
+spaceship['Active Duty'];   // Returns true
+spaceship['Fuel Type'];   // Returns  'Turbo Fuel'
+</code></pre><h2 id="property-assignment">Property Assignment</h2>
+<p>We can use either dot notation, ., or bracket notation, [], and the assignment operator, = to add new key-value pairs to an object or change an existing property.</p>
+<pre tabindex="0"><code>let spaceship = {
+  'Fuel Type' : 'Turbo Fuel',
+  homePlanet : 'Earth',
+  color: 'silver',
+  'Secret Mission' : 'Discover life outside of Earth.'
+};
+// Write your code below
+spaceship.color = 'glorious gold'
+//change the color value to 'glorious gold',
+spaceship.numEngines = 3;
+//create new numEngines vaue = 3
+delete spaceship['Secret Mission']
+//delete the object
+</code></pre><h2 id="methods">Methods</h2>
+<p>When the data stored on an object is a function we call that a method. A property is what an object has, while a method is what an object does.</p>
+<pre tabindex="0"><code>let retreatMessage = 'We no longer wish to conquer your planet. It is full of dogs, which we do not care for.';
+// Write your code below
+const alienShip = {
+  retreat(){
+    console.log(retreatMessage)
+  },
+  takeOff(){
+    console.log('Spim... Borp... Glix... Blastoff!')
+    }
+}
+alienShip.retreat(); // print retreatmessage
+alienShip.takeOff(); // print Spim... Borp... Glix... Blastoff!
+</code></pre><h2 id="nested-objects">Nested Objects</h2>
+<p>objects are often nested— an object might have another object as a property which in turn could have a property that’s an array of even more objects!</p>
+<h2 id="pass-by-reference">Pass By Reference</h2>
+<p>Objects are passed by reference. This means when we pass a variable assigned to an object into a function as an argument, the computer interprets the parameter name as pointing to the space in memory holding that object. As a result, functions which change object properties actually mutate the object permanently (even when the object is assigned to a const variable).</p>
+<pre tabindex="0"><code>const spaceship = {
+  homePlanet : 'Earth',
+  color : 'silver'
+};
+let paintIt = obj =&gt; {
+  obj.color = 'glorious gold'
+};
+paintIt(spaceship);
+spaceship.color // Returns 'glorious gold'
+</code></pre><h2 id="looping-through-objects">Looping Through Objects</h2>
+<p>The JavaScript for&hellip;in loop can be used to iterate over the keys of an object. In each iteration, one of the properties from the object is assigned to the variable of that loop.</p>
+<pre tabindex="0"><code>let mobile = {
+  brand: 'Samsung',
+  model: 'Galaxy Note 9'
+};
+for (let key in mobile) {
+  console.log(`${key}: ${mobile[key]}`);
+}
+</code></pre><h1 id="advanced-objects-introduction">Advanced Objects Introduction</h1>
+<h2 id="this-keyword">this Keyword</h2>
+<p>The reserved keyword this refers to a method’s calling object, and it can be used to access properties belonging to that object.<br>
+Here, using the this keyword inside the object function to refer to the cat object and access its name property.</p>
+<pre tabindex="0"><code>const cat = {
+  name: 'Pipey',
+  age: 8,
+  whatName() {
+    return this.name  
+  }
+};
+console.log(cat.whatName()); 
+// Output: Pipey
+</code></pre><pre tabindex="0"><code>const restaurant = {
+  numCustomers: 45,
+  seatCapacity: 100,
+  availableSeats() {
+    // this refers to the restaurant object
+    // and it's used to access its properties
+    return this.seatCapacity - this.numCustomers;
+  }
+}
+</code></pre><p>another example this:</p>
+<pre tabindex="0"><code>const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet() {
+    console.log(this.dietType);
+  }
+};
+ 
+goat.diet(); 
+// Output: herbivore
+</code></pre><h2 id="privacy">Privacy</h2>
+<p>One common convention is to place an underscore _ before the name of a property to mean that the property should not be altered.</p>
+<pre tabindex="0"><code>const robot = {
+  _energyLevel: 100,
+  recharge(){
+    this._energyLevel += 30;
+    console.log(`Recharged! Energy is currently at ${this._energyLevel}%.`)
+  }
+};
+robot._energyLevel = `high`;
+robot.recharge();
+</code></pre><h2 id="getters">Getters</h2>
+<p>Getters are methods that get and return the internal properties of an object. But they can do more than just retrieve the value of a property!
+Setters methods which reassign values of existing properties within an object.</p>
+<pre tabindex="0"><code>const myCat = {
+  _name: 'Snickers',
+  get name(){
+    return this._name
+  },
+  set name(newName){
+    //Verify that newName is a non-empty string before setting as name property
+    if (typeof newName === 'string' &amp;&amp; newName.length &gt; 0){
+      this._name = newName; 
+    } else {
+      console.log(&quot;ERROR: name must be a non-empty string&quot;); 
+    }
+  }
+}
+</code></pre><h2 id="factory-functions">Factory Functions</h2>
+<p>A factory function is a function that returns an object and can be reused to make multiple object instances. Factory functions can also have parameters allowing us to customize the object that gets returned.</p>
+<pre tabindex="0"><code>const monsterFactory = (name, age, energySource, catchPhrase) =&gt; {
+  return { 
+    name: name,
+    age: age, 
+    energySource: energySource,
+    scare() {
+      console.log(catchPhrase);
+    } 
+  }
+};
+const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
+ghost.scare(); // 'BOO!'
+</code></pre><h2 id="property-value-shorthand">Property Value Shorthand</h2>
+<p>The shorthand property name syntax in JavaScript allows creating objects without explicitly specifying the property names (ie. explicitly declaring the value after the key). In this process, an object is created where the property names of that object match variables which already exist in that context. Shorthand property names populate an object with a key matching the identifier and a value matching the identifier’s value.</p>
+<pre tabindex="0"><code>const activity = 'Surfing';
+const beach = { activity };
+console.log(beach); // { activity: 'Surfing' }
+</code></pre><h2 id="javascript-destructuring-assignment-shorthand-syntax">JavaScript destructuring assignment shorthand syntax</h2>
+<p>The JavaScript destructuring assignment is a shorthand syntax that allows object properties to be extracted into specific variable values.</p>
+<p>It uses a pair of curly braces ({}) with property names on the left-hand side of an assignment to extract values from objects. The number of variables can be less than the total properties of an object.</p>
+<pre tabindex="0"><code>const rubiksCubeFacts = {
+  possiblePermutations: '43,252,003,274,489,856,000',
+  invented: '1974',
+  largestCube: '17x17x17'
+};
+const {possiblePermutations, invented, largestCube} = rubiksCubeFacts;
+console.log(possiblePermutations); // '43,252,003,274,489,856,000'
+console.log(invented); // '1974'
+console.log(largestCube); // '17x17x17'
+</code></pre><p>This is the cheatsheet of javascript
+<a href="https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-objects/cheatsheet">https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-objects/cheatsheet</a></p>
+
     </div>
   </article>
 
@@ -205,7 +400,27 @@
 
     
     <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#creating-object-literals">Creating Object Literals</a></li>
+    <li><a href="#1-accessing-properties">1. Accessing Properties</a></li>
+    <li><a href="#2-bracket-notation">2. Bracket Notation</a></li>
+    <li><a href="#property-assignment">Property Assignment</a></li>
+    <li><a href="#methods">Methods</a></li>
+    <li><a href="#nested-objects">Nested Objects</a></li>
+    <li><a href="#pass-by-reference">Pass By Reference</a></li>
+    <li><a href="#looping-through-objects">Looping Through Objects</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#this-keyword">this Keyword</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#getters">Getters</a></li>
+    <li><a href="#factory-functions">Factory Functions</a></li>
+    <li><a href="#property-value-shorthand">Property Value Shorthand</a></li>
+    <li><a href="#javascript-destructuring-assignment-shorthand-syntax">JavaScript destructuring assignment shorthand syntax</a></li>
+  </ul>
+</nav>
     </div>
     
 
@@ -253,7 +468,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fblog11%2f&name=Blog11%20-%20Javascript%20Note%20-%20Object&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fblog11%2f&name=Blog11%20-%20Javascript%20Note%20-%20Object&description=What%20is%20Object%3f%20There%20are%20only%20seven%20fundamental%20data%20types%20in%20JavaScript%2c%20and%20six%20of%20those%20are%20the%20primitive%20data%20types%3a%20string%2c%20number%2c%20boolean%2c%20null%2c%20undefined%2c%20and%20symbol.%20With%20the%20seventh%20type%2c%20objects%2c%20we%20open%20our%20code%20to%20more%20complex%20possibilities.%20We%20can%20use%20JavaScript%20objects%20to%20model%20real-world%20things%2c%20like%20a%20basketball%2c%20or%20we%20can%20use%20objects%20to%20build%20the%20data%20structures%20that%20make%20the%20web%20possible.%20JavaScript%20objects%20are%20containers%20storing%20related%20data%20and%20functionality%2c%20but%20that%20deceptively%20simple%20task%20is%20extremely%20powerful%20in%20practice." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

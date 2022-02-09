@@ -6,7 +6,17 @@
     <description>Recent content on Wei Liu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Nov 2021 00:01:54 -0800</lastBuildDate><atom:link href="https://liuwei0915.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Feb 2022 21:34:48 -0800</lastBuildDate><atom:link href="https://liuwei0915.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022_Spring_blog0 - Javascript Continue Class</title>
+      <link>https://liuwei0915.github.io/posts/spring_blog0/</link>
+      <pubDate>Sun, 06 Feb 2022 21:34:48 -0800</pubDate>
+      
+      <guid>https://liuwei0915.github.io/posts/spring_blog0/</guid>
+      <description>Introduction to Classes JavaScript is an object-oriented programming (OOP) language. In short, Classes are templates for objects.
+When an object is created based on the class, the new object is referred to as an instance of the class. New instances are created using the new keyword. The code sample shows a class that represents a Song. A new object called mySong is created underneath and the .play() method on the class is called.</description>
+    </item>
+    
     <item>
       <title>Blog12 - AWS</title>
       <link>https://liuwei0915.github.io/posts/blog12/</link>

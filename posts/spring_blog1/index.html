@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 2022_Spring_blog1 - Javascript Note - HTML DOM  | Wei Liu&#39;s Blog</title>
+  <link rel = 'canonical' href = 'https://liuwei0915.github.io/posts/spring_blog1/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="2022_Spring_blog1 - Javascript Note - HTML DOM " />
+<meta property="og:description" content="The HTML DOM (Document Object Model) When a web page is loaded, the browser creates a Document Object Model of the page.
+The HTML DOM model is constructed as a tree of Objects:
+HTML DOM Methods HTML DOM methods are actions you can perform (on HTML Elements).
+HTML DOM properties are values (of HTML Elements) that you can set or change.
+&lt;html&gt; &lt;body&gt; &lt;p id=&quot;demo&quot;&gt;&lt;/p&gt; &lt;script&gt; document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello World!&quot;; &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; The getElementById Method The most common way to access an HTML element is to use the id of the element." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://liuwei0915.github.io/posts/spring_blog1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-14T15:11:26-08:00" />
+<meta property="article:modified_time" content="2022-02-14T15:11:26-08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2022_Spring_blog1 - Javascript Note - HTML DOM "/>
+<meta name="twitter:description" content="The HTML DOM (Document Object Model) When a web page is loaded, the browser creates a Document Object Model of the page.
+The HTML DOM model is constructed as a tree of Objects:
+HTML DOM Methods HTML DOM methods are actions you can perform (on HTML Elements).
+HTML DOM properties are values (of HTML Elements) that you can set or change.
+&lt;html&gt; &lt;body&gt; &lt;p id=&quot;demo&quot;&gt;&lt;/p&gt; &lt;script&gt; document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello World!&quot;; &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; The getElementById Method The most common way to access an HTML element is to use the id of the element."/>
+
+  
+  
+  
+  <link rel="stylesheet" href="https://liuwei0915.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://liuwei0915.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://liuwei0915.github.io/posts/spring_blog0/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&text=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&title=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&is_video=false&description=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20&body=Check out this article: https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&title=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&title=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&name=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20&description=The%20HTML%20DOM%20%28Document%20Object%20Model%29%20When%20a%20web%20page%20is%20loaded%2c%20the%20browser%20creates%20a%20Document%20Object%20Model%20of%20the%20page.%0aThe%20HTML%20DOM%20model%20is%20constructed%20as%20a%20tree%20of%20Objects%3a%0aHTML%20DOM%20Methods%20HTML%20DOM%20methods%20are%20actions%20you%20can%20perform%20%28on%20HTML%20Elements%29.%0aHTML%20DOM%20properties%20are%20values%20%28of%20HTML%20Elements%29%20that%20you%20can%20set%20or%20change.%0a%26lt%3bhtml%26gt%3b%20%26lt%3bbody%26gt%3b%20%26lt%3bp%20id%3d%26quot%3bdemo%26quot%3b%26gt%3b%26lt%3b%2fp%26gt%3b%20%26lt%3bscript%26gt%3b%20document.getElementById%28%26quot%3bdemo%26quot%3b%29.innerHTML%20%3d%20%26quot%3bHello%20World%21%26quot%3b%3b%20%26lt%3b%2fscript%26gt%3b%20%26lt%3b%2fbody%26gt%3b%20%26lt%3b%2fhtml%26gt%3b%20The%20getElementById%20Method%20The%20most%20common%20way%20to%20access%20an%20HTML%20element%20is%20to%20use%20the%20id%20of%20the%20element." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&t=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-getelementbyid-method">The getElementById Method</a></li>
+    <li><a href="#the-innerhtml-property">The innerHTML Property</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#finding-html-elements">Finding HTML Elements</a></li>
+    <li><a href="#changing-html-elements">Changing HTML Elements</a></li>
+    <li><a href="#adding-and-deleting-elements">Adding and Deleting Elements</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#finding-html-element-by-id">Finding HTML Element by Id</a></li>
+    <li><a href="#finding-html-elements-by-tag-name">Finding HTML Elements by Tag Name</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#changing-the-value-of-an-attribute">Changing the Value of an Attribute</a></li>
+    <li><a href="#dynamic-html-content">Dynamic HTML content</a></li>
+    <li><a href="#documentwrite">document.write()</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#javascript-form-validation">JavaScript Form Validation</a></li>
+    <li><a href="#javascript-can-validate-numeric-input">JavaScript Can Validate Numeric Input</a></li>
+    <li><a href="#automatic-html-form-validation">Automatic HTML Form Validation</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#reacting-to-events">Reacting to Events</a></li>
+    <li><a href="#html-event-attributes">HTML Event Attributes</a></li>
+    <li><a href="#assign-events-using-the-html-dom">Assign Events Using the HTML DOM</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#the-addeventlistener-method">The addEventListener() method</a></li>
+    <li><a href="#add-an-event-handler-to-an-element">Add an Event Handler to an Element</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        2022_Spring_blog1 - Javascript Note - HTML DOM 
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-02-14 15:11:26 -0800 PST" itemprop="datePublished">2022-02-14</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h1 id="the-html-dom-document-object-model">The HTML DOM (Document Object Model)</h1>
+<p>When a web page is loaded, the browser creates a Document Object Model of the page.<br>
+The HTML DOM model is constructed as a tree of Objects:<br>
+<img src="https://www.w3schools.com/js/pic_htmltree.gif" alt="DOM"></p>
+<h1 id="html-dom-methods">HTML DOM Methods</h1>
+<p>HTML DOM methods are actions you can perform (on HTML Elements).<br>
+HTML DOM properties are values (of HTML Elements) that you can set or change.</p>
+<pre tabindex="0"><code>&lt;html&gt;
+&lt;body&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello World!&quot;;
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="the-getelementbyid-method">The getElementById Method</h2>
+<p>The most common way to access an HTML element is to use the id of the element.<br>
+In the example above the getElementById method used id=&ldquo;demo&rdquo; to find the element.</p>
+<h2 id="the-innerhtml-property">The innerHTML Property</h2>
+<p>The easiest way to get the content of an element is by using the innerHTML property.<br>
+The innerHTML property is useful for getting or replacing the content of HTML elements.</p>
+<h1 id="the-html-dom-document-object">The HTML DOM Document Object</h1>
+<p>The document object represents your web page.<br>
+If you want to access any element in an HTML page, you always start with accessing the document object.<br>
+Below are some examples of how you can use the document object to access and manipulate HTML.</p>
+<h2 id="finding-html-elements">Finding HTML Elements</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document.getElementById(id)</td>
+<td>Find an element by element id</td>
+</tr>
+<tr>
+<td>document.getElementsByTagName(name)</td>
+<td>Find elements by tag name</td>
+</tr>
+<tr>
+<td>document.getElementsByClassName(name)</td>
+<td>Find elements by class name</td>
+</tr>
+</tbody>
+</table>
+<h2 id="changing-html-elements">Changing HTML Elements</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>element.innerHTML =  new html content</td>
+<td>Change the inner HTML of an element</td>
+</tr>
+<tr>
+<td>element.attribute = new value</td>
+<td>Change the attribute value of an HTML element</td>
+</tr>
+<tr>
+<td>element.style.property = new style</td>
+<td>Change the style of an HTML element</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</td>
+<td>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</td>
+</tr>
+<tr>
+<td>element.setAttribute(attribute, value)</td>
+<td>Change the attribute value of an HTML element</td>
+</tr>
+</tbody>
+</table>
+<h2 id="adding-and-deleting-elements">Adding and Deleting Elements</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document.createElement(element)</td>
+<td>Create an HTML element</td>
+</tr>
+<tr>
+<td>document.removeChild(element)</td>
+<td>Remove an HTML element</td>
+</tr>
+<tr>
+<td>document.appendChild(element)</td>
+<td>Add an HTML element</td>
+</tr>
+<tr>
+<td>document.replaceChild(new, old)</td>
+<td>Replace an HTML element</td>
+</tr>
+<tr>
+<td>document.write(text)</td>
+<td>Write into the HTML output stream</td>
+</tr>
+</tbody>
+</table>
+<h1 id="javascript-html-dom-elements">JavaScript HTML DOM Elements</h1>
+<ul>
+<li>Finding HTML elements by id</li>
+<li>Finding HTML elements by tag name</li>
+<li>Finding HTML elements by class name</li>
+<li>Finding HTML elements by CSS selectors</li>
+<li>Finding HTML elements by HTML object collections</li>
+</ul>
+<h2 id="finding-html-element-by-id">Finding HTML Element by Id</h2>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript HTML DOM&lt;/h2&gt;
+
+&lt;p id=&quot;intro&quot;&gt;Finding HTML Elements by Id&lt;/p&gt;
+&lt;p&gt;This example demonstrates the &lt;b&gt;getElementsById&lt;/b&gt; method.&lt;/p&gt;
+
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+
+&lt;script&gt;
+const element = document.getElementById(&quot;intro&quot;);
+
+document.getElementById(&quot;demo&quot;).innerHTML = 
+&quot;The text from the intro paragraph is: &quot; + element.innerHTML;
+
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>Output:</p>
+<pre tabindex="0"><code>JavaScript HTML DOM
+Finding HTML Elements by Id
+This example demonstrates the getElementsById method.
+The text from the intro paragraph is: Finding HTML Elements by Id
+</code></pre><h2 id="finding-html-elements-by-tag-name">Finding HTML Elements by Tag Name</h2>
+<p>The only difference from obove code is JS portion, but the output is same.</p>
+<pre tabindex="0"><code>&lt;script&gt;
+const element = document.getElementById(&quot;intro&quot;);
+
+document.getElementById(&quot;demo&quot;).innerHTML = 
+&quot;The text from the intro paragraph is: &quot; + element.innerHTML;
+
+&lt;/script&gt;
+</code></pre><p>or</p>
+<pre tabindex="0"><code>const x = document.getElementById(&quot;main&quot;);
+const y = x.getElementsByTagName(&quot;p&quot;);
+
+document.getElementById(&quot;demo&quot;).innerHTML = 
+'The first paragraph (index 0) inside &quot;main&quot; is: ' + y[0].innerHTML;
+</code></pre><h1 id="changing-html-content">Changing HTML Content</h1>
+<p>The easiest way to modify the content of an HTML element is by using the innerHTML property.<br>
+To change the content of an HTML element, use this syntax:</p>
+<pre tabindex="0"><code>document.getElementById(id).innerHTML = new HTML
+</code></pre><p>This example changes the content of a <!-- raw HTML omitted --> element:</p>
+<pre tabindex="0"><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id=&quot;p1&quot;&gt;Hello World!&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById(&quot;p1&quot;).innerHTML = &quot;New text!&quot;;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>Output:</p>
+<pre tabindex="0"><code>JavaScript can Change HTML
+
+New text!
+</code></pre><pre tabindex="0"><code>&lt;script&gt;
+const element = document.getElementById(&quot;id01&quot;);
+element.innerHTML = &quot;New Heading&quot;;
+&lt;/script&gt;
+</code></pre><pre tabindex="0"><code>New Heading
+</code></pre><h2 id="changing-the-value-of-an-attribute">Changing the Value of an Attribute</h2>
+<p>To change the value of an HTML attribute, use this syntax:</p>
+<pre tabindex="0"><code>document.getElementById(id).attribute = new value
+</code></pre><p>This example changes the value of the src attribute of an <!-- raw HTML omitted --> element:</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h2&gt;JavaScript HTML DOM&lt;/h2&gt;
+&lt;img id=&quot;image&quot; src=&quot;smiley.gif&quot; width=&quot;160&quot; height=&quot;120&quot;&gt;
+&lt;script&gt;
+document.getElementById(&quot;image&quot;).src = &quot;landscape.jpg&quot;;
+&lt;/script&gt;
+&lt;p&gt;The original image was smiley.gif, but the script changed it to landscape.jpg&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="dynamic-html-content">Dynamic HTML content</h2>
+<p>JavaScript can create dynamic HTML content:<br>
+Date : Mon Feb 14 2022 18:22:02 GMT-0800 (PST)</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;Date : &quot; + Date();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre><h2 id="documentwrite">document.write()</h2>
+<p>In JavaScript, document.write() can be used to write directly to the HTML output stream:</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;Bla, bla, bla&lt;/p&gt;
+
+&lt;script&gt;
+document.write(Date());
+&lt;/script&gt;
+
+&lt;p&gt;Bla, bla, bla&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre><p>Output:</p>
+<pre tabindex="0"><code>Bla, bla, bla
+
+Tue Feb 15 2022 23:11:32 GMT-0800 (PST)
+Bla, bla, bla
+</code></pre><h1 id="javascript-forms">JavaScript Forms</h1>
+<h2 id="javascript-form-validation">JavaScript Form Validation</h2>
+<p>HTML form validation can be done by JavaScript.</p>
+<p>If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being submitted:</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function validateForm() {
+  let x = document.forms[&quot;myForm&quot;][&quot;fname&quot;].value;
+  if (x == &quot;&quot;) {
+    alert(&quot;Name must be filled out&quot;);
+    return false;
+  }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Validation&lt;/h2&gt;
+
+&lt;form name=&quot;myForm&quot; action=&quot;/action_page.php&quot; onsubmit=&quot;return validateForm()&quot; method=&quot;post&quot;&gt;
+  Name: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="javascript-can-validate-numeric-input">JavaScript Can Validate Numeric Input</h2>
+<p>JavaScript is often used to validate numeric input:</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Validation&lt;/h2&gt;
+
+&lt;p&gt;Please input a number between 1 and 10:&lt;/p&gt;
+
+&lt;input id=&quot;numb&quot;&gt;
+
+&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;Submit&lt;/button&gt;
+
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function myFunction() {
+  // Get the value of the input field with id=&quot;numb&quot;
+  let x = document.getElementById(&quot;numb&quot;).value;
+  // If x is Not a Number or less than one or greater than 10
+  let text;
+  if (isNaN(x) || x &lt; 1 || x &gt; 10) {
+    text = &quot;Input not valid&quot;;
+  } else {
+    text = &quot;Input OK&quot;;
+  }
+  document.getElementById(&quot;demo&quot;).innerHTML = text;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="automatic-html-form-validation">Automatic HTML Form Validation</h2>
+<p>HTML form validation can be performed automatically by the browser:<br>
+If a form field (fname) is empty, the required attribute prevents this form from being submitted:</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Validation&lt;/h2&gt;
+
+&lt;form action=&quot;/action_page.php&quot; method=&quot;post&quot;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;fname&quot; required&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;p&gt;If you click submit, without filling out the text field,
+your browser will display an error message.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h1 id="changing-html-style">Changing HTML Style</h1>
+<p>To change the style of an HTML element, use this syntax:</p>
+<pre tabindex="0"><code>document.getElementById(id).style.property = new style
+</code></pre><p>The following example changes the style of a <!-- raw HTML omitted --> element:</p>
+<pre tabindex="0"><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id=&quot;p2&quot;&gt;Hello World!&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById(&quot;p2&quot;).style.color = &quot;blue&quot;;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h1 id="javascript-html-dom-events">JavaScript HTML DOM Events</h1>
+<h2 id="reacting-to-events">Reacting to Events</h2>
+<p>A JavaScript can be executed when an event occurs, like when a user clicks on an HTML element.
+To execute code when a user clicks on an element, add JavaScript code to an HTML event attribute:</p>
+<pre tabindex="0"><code>onclick=JavaScript
+</code></pre><p>Example:</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 onclick=&quot;changeText(this)&quot;&gt;Click on this text!&lt;/h1&gt;
+
+&lt;script&gt;
+function changeText(id) { 
+  id.innerHTML = &quot;Ooops!&quot;;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="html-event-attributes">HTML Event Attributes</h2>
+<p>To assign events to HTML elements you can use event attributes.</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript HTML Events&lt;/h2&gt;
+&lt;p&gt;Click the button to display the date.&lt;/p&gt;
+
+&lt;button onclick=&quot;displayDate()&quot;&gt;The time is?&lt;/button&gt;
+
+&lt;script&gt;
+function displayDate() {
+  document.getElementById(&quot;demo&quot;).innerHTML = Date();
+}
+&lt;/script&gt;
+
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre><h2 id="assign-events-using-the-html-dom">Assign Events Using the HTML DOM</h2>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript HTML Events&lt;/h2&gt;
+&lt;p&gt;Click &quot;Try it&quot; to execute the displayDate() function.&lt;/p&gt;
+
+&lt;button id=&quot;myBtn&quot;&gt;Try it&lt;/button&gt;
+
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById(&quot;myBtn&quot;).onclick = displayDate;
+
+function displayDate() {
+  document.getElementById(&quot;demo&quot;).innerHTML = Date();
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre><p>In the example above, a function named displayDate is assigned to an HTML element with the id=&ldquo;myBtn&rdquo;.<br>
+The function will be executed when the button is clicked.</p>
+<h1 id="javascript-html-dom-eventlistener">JavaScript HTML DOM EventListener</h1>
+<h2 id="the-addeventlistener-method">The addEventListener() method</h2>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript addEventListener()&lt;/h2&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to attach a click event to a button.&lt;/p&gt;
+
+&lt;button id=&quot;myBtn&quot;&gt;Try it&lt;/button&gt;
+
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById(&quot;myBtn&quot;).addEventListener(&quot;click&quot;, displayDate);
+
+function displayDate() {
+  document.getElementById(&quot;demo&quot;).innerHTML = Date();
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="add-an-event-handler-to-an-element">Add an Event Handler to an Element</h2>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript addEventListener()&lt;/h2&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to attach a click event to a button.&lt;/p&gt;
+
+&lt;button id=&quot;myBtn&quot;&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+document.getElementById(&quot;myBtn&quot;).addEventListener(&quot;click&quot;, function() {
+  alert(&quot;Hello World!&quot;);
+});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre><p>Another example:</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript addEventListener()&lt;/h2&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to execute a function when a user clicks on a button.&lt;/p&gt;
+
+&lt;button id=&quot;myBtn&quot;&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+document.getElementById(&quot;myBtn&quot;).addEventListener(&quot;click&quot;, myFunction);
+
+function myFunction() {
+  alert (&quot;Hello World!&quot;);
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-getelementbyid-method">The getElementById Method</a></li>
+    <li><a href="#the-innerhtml-property">The innerHTML Property</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#finding-html-elements">Finding HTML Elements</a></li>
+    <li><a href="#changing-html-elements">Changing HTML Elements</a></li>
+    <li><a href="#adding-and-deleting-elements">Adding and Deleting Elements</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#finding-html-element-by-id">Finding HTML Element by Id</a></li>
+    <li><a href="#finding-html-elements-by-tag-name">Finding HTML Elements by Tag Name</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#changing-the-value-of-an-attribute">Changing the Value of an Attribute</a></li>
+    <li><a href="#dynamic-html-content">Dynamic HTML content</a></li>
+    <li><a href="#documentwrite">document.write()</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#javascript-form-validation">JavaScript Form Validation</a></li>
+    <li><a href="#javascript-can-validate-numeric-input">JavaScript Can Validate Numeric Input</a></li>
+    <li><a href="#automatic-html-form-validation">Automatic HTML Form Validation</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#reacting-to-events">Reacting to Events</a></li>
+    <li><a href="#html-event-attributes">HTML Event Attributes</a></li>
+    <li><a href="#assign-events-using-the-html-dom">Assign Events Using the HTML DOM</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#the-addeventlistener-method">The addEventListener() method</a></li>
+    <li><a href="#add-an-event-handler-to-an-element">Add an Event Handler to an Element</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&text=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&title=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&is_video=false&description=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20&body=Check out this article: https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&title=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&title=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&name=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20&description=The%20HTML%20DOM%20%28Document%20Object%20Model%29%20When%20a%20web%20page%20is%20loaded%2c%20the%20browser%20creates%20a%20Document%20Object%20Model%20of%20the%20page.%0aThe%20HTML%20DOM%20model%20is%20constructed%20as%20a%20tree%20of%20Objects%3a%0aHTML%20DOM%20Methods%20HTML%20DOM%20methods%20are%20actions%20you%20can%20perform%20%28on%20HTML%20Elements%29.%0aHTML%20DOM%20properties%20are%20values%20%28of%20HTML%20Elements%29%20that%20you%20can%20set%20or%20change.%0a%26lt%3bhtml%26gt%3b%20%26lt%3bbody%26gt%3b%20%26lt%3bp%20id%3d%26quot%3bdemo%26quot%3b%26gt%3b%26lt%3b%2fp%26gt%3b%20%26lt%3bscript%26gt%3b%20document.getElementById%28%26quot%3bdemo%26quot%3b%29.innerHTML%20%3d%20%26quot%3bHello%20World%21%26quot%3b%3b%20%26lt%3b%2fscript%26gt%3b%20%26lt%3b%2fbody%26gt%3b%20%26lt%3b%2fhtml%26gt%3b%20The%20getElementById%20Method%20The%20most%20common%20way%20to%20access%20an%20HTML%20element%20is%20to%20use%20the%20id%20of%20the%20element." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog1%2f&t=2022_Spring_blog1%20-%20Javascript%20Note%20-%20HTML%20DOM%20" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Wei Liu&#39;s Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

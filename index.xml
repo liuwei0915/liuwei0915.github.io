@@ -6,7 +6,19 @@
     <description>Recent content on Wei Liu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Feb 2022 15:11:26 -0800</lastBuildDate><atom:link href="https://liuwei0915.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Feb 2022 18:01:00 -0800</lastBuildDate><atom:link href="https://liuwei0915.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring_blog2 - NodeJs</title>
+      <link>https://liuwei0915.github.io/posts/spring_blog2/</link>
+      <pubDate>Tue, 22 Feb 2022 18:01:00 -0800</pubDate>
+      
+      <guid>https://liuwei0915.github.io/posts/spring_blog2/</guid>
+      <description>what is Node.js? Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
+Introduction to Node.js We can execute Node.js programs in the terminal by typing the node command, followed by the name of the file.
+node app.js Node.js REPL Node.js comes with REPL, an abbreviation for read–eval–print loop. REPL contains three different states:
+*a read state where it reads the input from a user, *the eval state where it evaluates the user’s input *the print state where it prints out the evaluation to the console.</description>
+    </item>
+    
     <item>
       <title>2022_Spring_blog1 - Javascript Note - HTML DOM </title>
       <link>https://liuwei0915.github.io/posts/spring_blog1/</link>

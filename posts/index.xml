@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Wei Liu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Feb 2022 18:01:00 -0800</lastBuildDate><atom:link href="https://liuwei0915.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Feb 2022 12:46:38 -0800</lastBuildDate><atom:link href="https://liuwei0915.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring_blog4 - Terraform - Get Start</title>
+      <link>https://liuwei0915.github.io/posts/spring_blog4/</link>
+      <pubDate>Mon, 28 Feb 2022 12:46:38 -0800</pubDate>
+      
+      <guid>https://liuwei0915.github.io/posts/spring_blog4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring_blog3 - Terraform - Get Start</title>
+      <link>https://liuwei0915.github.io/posts/spring_blog3/</link>
+      <pubDate>Mon, 28 Feb 2022 12:46:34 -0800</pubDate>
+      
+      <guid>https://liuwei0915.github.io/posts/spring_blog3/</guid>
+      <description>What is Terraform? Infrastructure as code(IaC) tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe,consistent and repeatable way to defining resource configurations that you can version, reuse and share. Terraform is HashiCorp&amp;rsquo;s infrastructures as code tool. It lets you define resources and infrastructure in human-readable, declarative configuration files , and manages your infrastructure&amp;rsquo;s lifecycle.</description>
+    </item>
+    
     <item>
       <title>2022_Spring_blog2 - NodeJs</title>
       <link>https://liuwei0915.github.io/posts/spring_blog2/</link>

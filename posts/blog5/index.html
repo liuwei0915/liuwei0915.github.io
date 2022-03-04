@@ -215,6 +215,40 @@ sudo ufw enable
 </code></pre><p>To allow incoming HTTP and HTTPS traffic for this server, run:</p>
 <pre tabindex="0"><code>sudo ufw allow &quot;Apache Full&quot;
 </code></pre><ol start="4">
+<li>Install ifconfig, curl, etc</li>
+</ol>
+<pre tabindex="0"><code>apt-get install curl  
+apt-get install net-tools
+</code></pre><p>Run the command &lsquo;ifconfig&rsquo; to find out your IP address.
+Then type command in terminal or open a web browser, type the ipaddress, you will get apache default page:</p>
+<pre tabindex="0"><code>curl (your ip address)
+</code></pre><ol start="5">
+<li>The third layer in our LAMP stack is MySQL. Run the follwing command sudo apt-get install mysql-server. When prompted say yes to complete the installation. Due note that during the installation you will be asked to set the root user password.</li>
+<li>Run the following command mysql -u root -p. This command will ask you for your root password and once you put the password in you will have access to mysql.
+If you dont have password preset, you can just press enter to skip that password.
+<img src="https://i.imgur.com/bimFYqN.png" alt="mysql"></li>
+<li>We will now create a simple database. In my sql type create database testdb and hit enter. After pressing enter type in ; and hit enter. To see our database we just created type in show databases hit enter then type ; and hit enter. You will have a display of all the databases and should see the testdb we have just created. Type quit to get out of mysql.<br>
+<img src="https://i.imgur.com/36o3iuV.png" alt="testdb"></li>
+<li>We now want to install phpmyadmin. Run the following commmand sudo apt-get install phpmyadmin and type yes when prompted. You will then be asked which server to configure phpmyadmin and select apache2. You will be prompted with another package configuration and select yes. Provide a new password for phpmyadmin.</li>
+<li>Open your web browser and type in your IP address from above followed by /phpmyadmin. You will get the following 404 error page.<br>
+<img src="https://i.imgur.com/rWJoCx9.png" alt="error"></li>
+<li>To fix this we need to edit the php.ini file. Locate your php.ini file, you can do this my running the command sudo nano /etc/php/7.2/apache2/php.ini, if you don’t find the file you might need to check the version of php and replace it with the correct one on the path. Scroll down on the file in order to uncomment an extension. We want to delete the ;, press ctrl+x type yes to save and hit enter.<br>
+Due note that this step will not work as you have not installed php yet and don’t have the directories/files associated with it. This is only to be able to access the database on the phpadmin database webpage. You can skip steps 8-12 if you don’t want to set up phpadmin webpage and would like to install php first. After installing php you can continue steps following
+<img src="https://i.imgur.com/VXZBmPh.png" alt="fix"></li>
+<li>Next we want to add a line to the apache2.conf file. Run the command sudo nano /etc/apache2/apache2.conf. Scroll all the way down and type into the file the following Include /etc/phpmyadmin/apache.conf<br>
+<img src="https://i.imgur.com/fvSSQDV.png" alt="1"></li>
+<li>Run the command sudo /etc/init.d/apache2 restart to restart apache and open up your browser and you should get the following
+<img src="https://i.imgur.com/xBzjlRa.png" alt="php"></li>
+<li>Log in using your username and password. Once you successfully log in on the top of the page click on the databases tab and you should see your testdb database.
+<img src="https://i.imgur.com/x96WrHW.png" alt="db"></li>
+<li>Finally we are ready to set up the fourth layer, the PHP layer. To do this run the commmand, sudo apt-get install php.</li>
+<li>Next we will make a simple php file that will display hello world to check if our wepage is running. Run the command, sudo nano /var/www/html/test.php, test.php will be the name that we give the file. Type in the following line &lt;?php echo &lsquo;Hello World&rsquo;;? &gt; Enter ctrl+x enter y to save and hit enter.<br>
+<img src="https://i.imgur.com/hqR0Qo1.png" alt="php"></li>
+<li>Lastly open up your web broswer and type in your IP address (xxx.xx.xxx.xx/test.php) and you should get the following:
+<img src="https://i.imgur.com/7NkHRzp.png" alt="hello"></li>
+</ol>
+<h1 id="following-is-option">Following is option</h1>
+<ol start="4">
 <li>Installing MySQL</li>
 </ol>
 <pre tabindex="0"><code>sudo apt install mysql-server
@@ -223,9 +257,7 @@ sudo ufw enable
 leverage the apt system to install PHP. In addition to the php package, you’ll also need libapache2-mod-php to integrate PHP into Apache, and the php-mysql package to allow PHP to connect to MySQL databases. Run the following command to install all three packages and their dependencies:</li>
 </ol>
 <pre tabindex="0"><code>sudo apt install php libapache2-mod-php php-mysql
-</code></pre><ol start="6">
-<li>Creating a Virtual Host for your Website</li>
-</ol>
+</code></pre><p>. Creating a Virtual Host for your Website</p>
 <ul>
 <li>First method to create your own dirctory with your own domain.
 Enable UserDir Module: RUN a2enmod userdir

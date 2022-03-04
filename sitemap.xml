@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://liuwei0915.github.io/posts/spring_blog2/</loc>
-    <lastmod>2022-02-22T18:01:00-08:00</lastmod>
-  </url><url>
     <loc>https://liuwei0915.github.io/posts/</loc>
-    <lastmod>2022-02-22T18:01:00-08:00</lastmod>
+    <lastmod>2022-02-28T12:46:38-08:00</lastmod>
+  </url><url>
+    <loc>https://liuwei0915.github.io/posts/spring_blog4/</loc>
+    <lastmod>2022-02-28T12:46:38-08:00</lastmod>
   </url><url>
     <loc>https://liuwei0915.github.io/</loc>
+    <lastmod>2022-02-28T12:46:38-08:00</lastmod>
+  </url><url>
+    <loc>https://liuwei0915.github.io/posts/spring_blog3/</loc>
+    <lastmod>2022-02-28T12:46:34-08:00</lastmod>
+  </url><url>
+    <loc>https://liuwei0915.github.io/posts/spring_blog2/</loc>
     <lastmod>2022-02-22T18:01:00-08:00</lastmod>
   </url><url>
     <loc>https://liuwei0915.github.io/posts/spring_blog1/</loc>

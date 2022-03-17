@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Spring_blog5 - Terraform - EC2 instance | Wei Liu&#39;s Blog</title>
+  <link rel = 'canonical' href = 'https://liuwei0915.github.io/posts/spring_blog5/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Spring_blog5 - Terraform - EC2 instance" />
+<meta property="og:description" content="Steps to Install Apache Web Server on Amazon Linux 2 Step 1 Launch an EC2 instance Before we install apache web server on EC2 instance
+Step 2 Connect to your Instance Once your instance is up and running, you need to connect to your instance. I will be using EC2 instance connect feature for this as it allows to SSH into instance from browser itself.
+if you want to usual SSH, feel free to use below command from your terminal." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://liuwei0915.github.io/posts/spring_blog5/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-28T12:46:42-08:00" />
+<meta property="article:modified_time" content="2022-02-28T12:46:42-08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring_blog5 - Terraform - EC2 instance"/>
+<meta name="twitter:description" content="Steps to Install Apache Web Server on Amazon Linux 2 Step 1 Launch an EC2 instance Before we install apache web server on EC2 instance
+Step 2 Connect to your Instance Once your instance is up and running, you need to connect to your instance. I will be using EC2 instance connect feature for this as it allows to SSH into instance from browser itself.
+if you want to usual SSH, feel free to use below command from your terminal."/>
+
+  
+  
+  
+  <link rel="stylesheet" href="https://liuwei0915.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://liuwei0915.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://liuwei0915.github.io/posts/spring_blog4/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&text=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&title=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&is_video=false&description=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Spring_blog5%20-%20Terraform%20-%20EC2%20instance&body=Check out this article: https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&title=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&title=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&name=Spring_blog5%20-%20Terraform%20-%20EC2%20instance&description=Steps%20to%20Install%20Apache%20Web%20Server%20on%20Amazon%20Linux%202%20Step%201%20Launch%20an%20EC2%20instance%20Before%20we%20install%20apache%20web%20server%20on%20EC2%20instance%0aStep%202%20Connect%20to%20your%20Instance%20Once%20your%20instance%20is%20up%20and%20running%2c%20you%20need%20to%20connect%20to%20your%20instance.%20I%20will%20be%20using%20EC2%20instance%20connect%20feature%20for%20this%20as%20it%20allows%20to%20SSH%20into%20instance%20from%20browser%20itself.%0aif%20you%20want%20to%20usual%20SSH%2c%20feel%20free%20to%20use%20below%20command%20from%20your%20terminal." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&t=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#step-1-launch-an-ec2-instance">Step 1 Launch an EC2 instance</a></li>
+    <li><a href="#step-2-connect-to-your-instance">Step 2 Connect to your Instance</a>
+      <ul>
+        <li><a href="#to-ssh-from-browser-using-instance-connect-follow-below-steps">To SSH from browser using Instance connect, follow below steps.</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-3-install-apache-web-server">Step 3: Install Apache Web Server</a></li>
+    <li><a href="#step-4-change-security-group-of-instance-to-allow-port-80-and-443">Step 4: Change Security Group of instance to allow port 80 and 443</a></li>
+    <li><a href="#step-5-verify-the-installation">Step 5: Verify the Installation</a></li>
+    <li><a href="#step-6-customize-the-web-page">Step 6: Customize the web page</a></li>
+    <li><a href="#step-7-view-the-customized-web-page">Step 7: View the customized web page</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Spring_blog5 - Terraform - EC2 instance
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-02-28 12:46:42 -0800 PST" itemprop="datePublished">2022-02-28</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h1 id="steps-to-install-apache-web-server-on-amazon-linux-2">Steps to Install Apache Web Server on Amazon Linux 2</h1>
+<h2 id="step-1-launch-an-ec2-instance">Step 1 Launch an EC2 instance</h2>
+<p>Before we install apache web server on EC2 instance</p>
+<h2 id="step-2-connect-to-your-instance">Step 2 Connect to your Instance</h2>
+<p>Once your instance is up and running, you need to connect to your instance. I will be using EC2 instance connect feature for this as it allows to SSH into instance from browser itself.<br>
+if you want to usual SSH, feel free to use below command from your terminal.</p>
+<pre tabindex="0"><code>ssh -i /path/my-key-pair.pem ec2-user@instance-public-ip
+</code></pre><h3 id="to-ssh-from-browser-using-instance-connect-follow-below-steps">To SSH from browser using Instance connect, follow below steps.</h3>
+<ol>
+<li>Select your instance and click connect as highlighted below
+<img src="https://cloudkatha.com/ezoimgfmt/i0.wp.com/cloudkatha.com/wp-content/uploads/2021/09/SSH-into-EC2.png?w=1117&amp;ssl=1&amp;ezimgfmt=ng:webp/ngcb1" alt="image1"></li>
+<li>Once, you click Connect, you will see a screen with default username for a Linux 2 instance<br>
+<img src="https://cloudkatha.com/ezoimgfmt/i0.wp.com/cloudkatha.com/wp-content/uploads/2021/09/EC2-user-for-linux.png?w=904&amp;ssl=1&amp;ezimgfmt=ng:webp/ngcb1" alt="image2"><br>
+verify that ec2-user is showing in username field and click Connect.</li>
+<li>A new browser window will open and you will be connected into your instance like below.
+<img src="https://cloudkatha.com/ezoimgfmt/i0.wp.com/cloudkatha.com/wp-content/uploads/2021/09/Connected-to-EC2-instance.png?w=863&amp;ssl=1&amp;ezimgfmt=ng:webp/ngcb1" alt="image3"></li>
+</ol>
+<h2 id="step-3-install-apache-web-server">Step 3: Install Apache Web Server</h2>
+<p>we need to run below set of commands one by one, to install apache web server on our instance. Please note that we will use sudo(root privilege ) to run all these command. The reason is, whenever you try to install, remove or change any software, you must have root privilege to do such tasks.</p>
+<pre tabindex="0"><code>sudo yum update -y        //Update latest package available on the system
+sudo yum install -y httpd.x86_64  // Install Apache Web Server
+sudo systemctl start httpd.service  //Start Apache Server
+sudo systemctl enable httpd.service   //Configure Apache to run on system boot
+</code></pre><h2 id="step-4-change-security-group-of-instance-to-allow-port-80-and-443">Step 4: Change Security Group of instance to allow port 80 and 443</h2>
+<p>Let’s allow web traffic on port 80 and 443(Internet traffic for http and https).<br>
+Click on your instance Id to see the instance details. Scroll down and click on Security Tab and you should see security group like below.
+<img src="https://cloudkatha.com/ezoimgfmt/i0.wp.com/cloudkatha.com/wp-content/uploads/2021/09/Cick-on-Security-Group.png?w=1053&amp;ssl=1&amp;ezimgfmt=ng:webp/ngcb1" alt="image4">
+Click on Security Group id link -&gt; Click on Edit Inbound Rule<br>
+<img src="https://cloudkatha.com/ezoimgfmt/i0.wp.com/cloudkatha.com/wp-content/uploads/2021/09/Cick-Save-Rule-to-save-the-rule.png?w=1279&amp;ssl=1&amp;ezimgfmt=ng:webp/ngcb1" alt="image5"></p>
+<h2 id="step-5-verify-the-installation">Step 5: Verify the Installation</h2>
+<p>We have installed and started the apache web server.
+Our instance allows web traffic now, it’s time to grab the public IP or public dns of the instance.<br>
+<img src="https://cloudkatha.com/ezoimgfmt/i0.wp.com/cloudkatha.com/wp-content/uploads/2021/09/image.png?w=1120&amp;ssl=1&amp;ezimgfmt=ng:webp/ngcb1" alt="image6"><br>
+Click on open address and you should be able to see the tomcat default page like below.
+<img src="https://cloudkatha.com/ezoimgfmt/i0.wp.com/cloudkatha.com/wp-content/uploads/2021/09/Apache-successfully-instaled.png?w=1366&amp;ssl=1&amp;ezimgfmt=ng:webp/ngcb1" alt="image7"></p>
+<h2 id="step-6-customize-the-web-page">Step 6: Customize the web page</h2>
+<p>We have seen the default apache page served by apache. Lets modify that.<br>
+We will create our own index.html in the Document Root folder which is /var/www/html in our case.<br>
+DocumentRoot: Document Root is the directory from which apache looks for and serves web files on your request. So we will create an index.html in /var/www/html folder</p>
+<pre tabindex="0"><code>sudo echo “Hello World from $(hostname -f)” &gt; /var/www/html/index.html
+</code></pre><p>I used sudo nano command to create the file and put content into it.</p>
+<pre tabindex="0"><code>sudo nano /var/www/html/index.html
+</code></pre><p>Once, file opens up, paste below content into the file</p>
+<pre tabindex="0"><code>hello world  
+</code></pre><h2 id="step-7-view-the-customized-web-page">Step 7: View the customized web page</h2>
+<p>This time when you enter public ip or dns into the browser, you will see your customized page like below.<br>
+<img src="https://cloudkatha.com/ezoimgfmt/i0.wp.com/cloudkatha.com/wp-content/uploads/2021/09/File-is-customized-finay.png?w=1015&amp;ssl=1&amp;ezimgfmt=ng:webp/ngcb1" alt="image8">
+Demo file</p>
+<pre tabindex="0"><code>provider &quot;aws&quot; {
+  profile    = &quot;default&quot;
+  region     = &quot;us-east-1&quot;
+  access_key = &quot;AKIAYAB73SNAL7YQDJGO&quot;
+  secret_key = &quot;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&quot;
+}
+# create vpc
+resource &quot;aws_vpc&quot; &quot;pract-vpc&quot; {
+  cidr_block = &quot;10.0.0.0/16&quot;
+  tags = {
+    Name = &quot;practice&quot;
+  }
+}
+# create internet gateway
+resource &quot;aws_internet_gateway&quot; &quot;gw&quot; {
+  vpc_id = aws_vpc.pract-vpc.id
+
+}
+# create custome route table
+resource &quot;aws_route_table&quot; &quot;pract-route-table&quot; {
+  vpc_id = aws_vpc.pract-vpc.id
+  route {
+    cidr_block = &quot;0.0.0.0/0&quot;
+    gateway_id = aws_internet_gateway.gw.id
+  }
+
+  route {
+    ipv6_cidr_block = &quot;::/0&quot;
+    gateway_id      = aws_internet_gateway.gw.id
+  }
+
+  tags = {
+    Name = &quot;pract&quot;
+  }
+}
+# create a subnet
+resource &quot;aws_subnet&quot; &quot;subnet-1&quot; {
+  vpc_id            = aws_vpc.pract-vpc.id
+  cidr_block        = &quot;10.0.1.0/24&quot;
+  availability_zone = &quot;us-east-1a&quot;
+  tags = {
+    Name = &quot;pract-subnet&quot;
+  }
+}
+# associate subnet with route table
+resource &quot;aws_route_table_association&quot; &quot;a&quot; {
+  subnet_id      = aws_subnet.subnet-1.id
+  route_table_id = aws_route_table.pract-route-table.id
+}
+# create a security group
+resource &quot;aws_security_group&quot; &quot;allow-web&quot; {
+  name        = &quot;allow_web_traffic&quot;
+  description = &quot;Allow web inbound traffic&quot;
+  vpc_id      = aws_vpc.pract-vpc.id
+
+  ingress {
+    description = &quot;HTTPS Traffic&quot;
+    from_port   = 443
+    to_port     = 443
+    protocol    = &quot;tcp&quot;
+    cidr_blocks = [&quot;0.0.0.0/0&quot;]
+  }
+  ingress {
+    description = &quot;HTTP Traffic&quot;
+    from_port   = 80
+    to_port     = 80
+    protocol    = &quot;tcp&quot;
+    cidr_blocks = [&quot;0.0.0.0/0&quot;]
+  }
+  ingress {
+    description = &quot;SSH Traffic&quot;
+    from_port   = 22
+    to_port     = 22
+    protocol    = &quot;tcp&quot;
+    cidr_blocks = [&quot;0.0.0.0/0&quot;]
+  }
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = &quot;-1&quot;
+    cidr_blocks      = [&quot;0.0.0.0/0&quot;]
+    ipv6_cidr_blocks = [&quot;::/0&quot;]
+  }
+
+  tags = {
+    Name = &quot;allow_web&quot;
+  }
+}
+# create network interface
+resource &quot;aws_network_interface&quot; &quot;web-server-nic&quot; {
+  subnet_id       = aws_subnet.subnet-1.id
+  private_ips     = [&quot;10.0.1.50&quot;]
+  security_groups = [aws_security_group.allow-web.id]
+}
+# elastic ip to network interface
+resource &quot;aws_eip&quot; &quot;one&quot; {
+  vpc                       = true
+  network_interface         = aws_network_interface.web-server-nic.id
+  associate_with_private_ip = &quot;10.0.1.50&quot;
+  depends_on                = [aws_internet_gateway.gw]
+}
+# create ubuntu server and install enable apache2
+resource &quot;aws_instance&quot; &quot;web-server-instance&quot; {
+  ami               = &quot;ami-0e472ba40eb589f49&quot;
+  instance_type     = &quot;t2.micro&quot;
+  availability_zone = &quot;us-east-1a&quot;
+  key_name          = &quot;main-key&quot;
+  network_interface {
+    device_index         = 0
+    network_interface_id = aws_network_interface.web-server-nic.id
+  }
+  user_data = &lt;&lt;-EOF
+  #!/bin/bash
+  sudo apt update -y
+  sudo apt install apache2 -y
+  sudo apt install wget
+  sudo service apache2 restart
+  echo 'your first web server' &gt; /var/www/html/index.html
+  EOF
+  tags = {
+    Name = &quot;web-server&quot;
+  }
+}
+</code></pre>
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#step-1-launch-an-ec2-instance">Step 1 Launch an EC2 instance</a></li>
+    <li><a href="#step-2-connect-to-your-instance">Step 2 Connect to your Instance</a>
+      <ul>
+        <li><a href="#to-ssh-from-browser-using-instance-connect-follow-below-steps">To SSH from browser using Instance connect, follow below steps.</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-3-install-apache-web-server">Step 3: Install Apache Web Server</a></li>
+    <li><a href="#step-4-change-security-group-of-instance-to-allow-port-80-and-443">Step 4: Change Security Group of instance to allow port 80 and 443</a></li>
+    <li><a href="#step-5-verify-the-installation">Step 5: Verify the Installation</a></li>
+    <li><a href="#step-6-customize-the-web-page">Step 6: Customize the web page</a></li>
+    <li><a href="#step-7-view-the-customized-web-page">Step 7: View the customized web page</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&text=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&title=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&is_video=false&description=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Spring_blog5%20-%20Terraform%20-%20EC2%20instance&body=Check out this article: https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&title=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&title=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&name=Spring_blog5%20-%20Terraform%20-%20EC2%20instance&description=Steps%20to%20Install%20Apache%20Web%20Server%20on%20Amazon%20Linux%202%20Step%201%20Launch%20an%20EC2%20instance%20Before%20we%20install%20apache%20web%20server%20on%20EC2%20instance%0aStep%202%20Connect%20to%20your%20Instance%20Once%20your%20instance%20is%20up%20and%20running%2c%20you%20need%20to%20connect%20to%20your%20instance.%20I%20will%20be%20using%20EC2%20instance%20connect%20feature%20for%20this%20as%20it%20allows%20to%20SSH%20into%20instance%20from%20browser%20itself.%0aif%20you%20want%20to%20usual%20SSH%2c%20feel%20free%20to%20use%20below%20command%20from%20your%20terminal." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog5%2f&t=Spring_blog5%20-%20Terraform%20-%20EC2%20instance" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Wei Liu&#39;s Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Wei Liu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Feb 2022 12:46:42 -0800</lastBuildDate><atom:link href="https://liuwei0915.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Feb 2022 12:46:51 -0800</lastBuildDate><atom:link href="https://liuwei0915.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring_blog7</title>
+      <link>https://liuwei0915.github.io/posts/spring_blog7/</link>
+      <pubDate>Mon, 28 Feb 2022 12:46:51 -0800</pubDate>
+      
+      <guid>https://liuwei0915.github.io/posts/spring_blog7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring_blog6 - Terraform - Profile, user-data template, s3 bucket</title>
+      <link>https://liuwei0915.github.io/posts/spring_blog6/</link>
+      <pubDate>Mon, 28 Feb 2022 12:46:45 -0800</pubDate>
+      
+      <guid>https://liuwei0915.github.io/posts/spring_blog6/</guid>
+      <description>Terraform build AWS instance with profle role. resource &amp;quot;aws_iam_role&amp;quot; &amp;quot;test_role&amp;quot; { name = &amp;quot;test_role&amp;quot; # Terraform&#39;s &amp;quot;jsonencode&amp;quot; function converts a # Terraform expression result to valid JSON syntax. assume_role_policy = jsonencode({ Version = &amp;quot;2012-10-17&amp;quot; Statement = [ { Action = &amp;quot;sts:AssumeRole&amp;quot; Effect = &amp;quot;Allow&amp;quot; Sid = &amp;quot;&amp;quot; Principal = { Service = &amp;quot;ec2.amazonaws.com&amp;quot; } }, ] }) tags = { tag-key = &amp;quot;tag-value&amp;quot; } } </description>
+    </item>
+    
     <item>
       <title>Spring_blog5 - Terraform - EC2 instance</title>
       <link>https://liuwei0915.github.io/posts/spring_blog5/</link>

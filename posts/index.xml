@@ -17,12 +17,14 @@
     </item>
     
     <item>
-      <title>Spring_blog6 - Terraform - Profile, user-data template, s3 bucket</title>
+      <title>Spring_blog6 - Terraform - Getting start</title>
       <link>https://liuwei0915.github.io/posts/spring_blog6/</link>
       <pubDate>Mon, 28 Feb 2022 12:46:45 -0800</pubDate>
       
       <guid>https://liuwei0915.github.io/posts/spring_blog6/</guid>
-      <description>Terraform build AWS instance with profle role. resource &amp;quot;aws_iam_role&amp;quot; &amp;quot;test_role&amp;quot; { name = &amp;quot;test_role&amp;quot; # Terraform&#39;s &amp;quot;jsonencode&amp;quot; function converts a # Terraform expression result to valid JSON syntax. assume_role_policy = jsonencode({ Version = &amp;quot;2012-10-17&amp;quot; Statement = [ { Action = &amp;quot;sts:AssumeRole&amp;quot; Effect = &amp;quot;Allow&amp;quot; Sid = &amp;quot;&amp;quot; Principal = { Service = &amp;quot;ec2.amazonaws.com&amp;quot; } }, ] }) tags = { tag-key = &amp;quot;tag-value&amp;quot; } } </description>
+      <description>Variable variable &amp;quot;instance_type&amp;quot; { type =string } resource &amp;quot;aws_instance&amp;quot; &amp;quot;my_server&amp;quot; { ami = &amp;quot;ami-sadadafaf1030&amp;quot; instance_type = var.instance_type } then in the &amp;lsquo;terraform.tfvars&amp;rsquo; file add:
+instance_type = &amp;quot;t2.micro&amp;quot; declaring a local value locals { project_name = &amp;quot;Wei&amp;quot; //or name can be anything } then for the tags session in the whole page could be write in:
+tags = { Name = &amp;quot;allow_web.${local.project_name}&amp;quot; //use local declared data } Output values For example, output the public IP address.</description>
     </item>
     
     <item>

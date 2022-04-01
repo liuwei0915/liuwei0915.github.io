@@ -8,12 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Feb 2022 12:46:51 -0800</lastBuildDate><atom:link href="https://liuwei0915.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Spring_blog7</title>
+      <title>Spring_blog7 Python - Getting Start</title>
       <link>https://liuwei0915.github.io/posts/spring_blog7/</link>
       <pubDate>Mon, 28 Feb 2022 12:46:51 -0800</pubDate>
       
       <guid>https://liuwei0915.github.io/posts/spring_blog7/</guid>
-      <description></description>
+      <description>Print The print() function is used to output text, numbers, or other printable information to the console.
+print(&amp;quot;Hello World!&amp;quot;) print(100) pi = 3.14159 print(pi) print(pi + &amp;quot;is pi&amp;quot;) Arithmetic Operations # Arithmetic operations result = 10 + 30 result = 40 - 10 result = 50 * 5 result = 16 / 4 result = 25 % 2 result = 5 ** 3 Plus-Equals Operator += # Plus-Equal Operator counter = 0 counter += 10 # This is equivalent to counter = 0 counter = counter + 10 # The operator will also perform string concatenation message = &amp;quot;Part 1 of message &amp;quot; message += &amp;quot;Part 2 of message&amp;quot; Variables A variable is used to store data that will be used by the program.</description>
     </item>
     
     <item>
@@ -57,7 +58,7 @@ if you want to usual SSH, feel free to use below command from your terminal.</de
     </item>
     
     <item>
-      <title>2022_Spring_blog2 - NodeJs</title>
+      <title>2022_Spring_blog2 - NodeJs getting start</title>
       <link>https://liuwei0915.github.io/posts/spring_blog2/</link>
       <pubDate>Tue, 22 Feb 2022 18:01:00 -0800</pubDate>
       

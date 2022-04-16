@@ -6,9 +6,42 @@
     <description>Recent content on Wei Liu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Feb 2022 12:46:51 -0800</lastBuildDate><atom:link href="https://liuwei0915.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Apr 2022 00:04:50 -0700</lastBuildDate><atom:link href="https://liuwei0915.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Spring_blog7 Python - Getting Start</title>
+      <title>Spring_blog10 - Python - Class</title>
+      <link>https://liuwei0915.github.io/posts/spring_blog10/</link>
+      <pubDate>Mon, 04 Apr 2022 00:04:50 -0700</pubDate>
+      
+      <guid>https://liuwei0915.github.io/posts/spring_blog10/</guid>
+      <description>Types We can check the type of a Python variable using the type() function.
+a_string = &amp;quot;Cool String&amp;quot; an_int = 12 print(type(a_string)) # prints &amp;quot;&amp;lt;class &#39;str&#39;&amp;gt;&amp;quot; print(type(an_int)) # prints &amp;quot;&amp;lt;class &#39;int&#39;&amp;gt;&amp;quot; or
+my_dict = {} print(type(my_dict)) my_list = [] print(type(my_list)) //&amp;lt;class &#39;dict&#39;&amp;gt; //&amp;lt;class &#39;list&#39;&amp;gt; is like array Class template Define an empty class called Facade.
+class Facade: pass We used the pass keyword in Python to indicate that the body of the class was intentionally left blank so we don’t cause an IndentationError</description>
+    </item>
+    
+    <item>
+      <title>Spring_blog9 - Python - Modules, Dictionaries, File</title>
+      <link>https://liuwei0915.github.io/posts/spring_blog9/</link>
+      <pubDate>Fri, 01 Apr 2022 13:22:38 -0700</pubDate>
+      
+      <guid>https://liuwei0915.github.io/posts/spring_blog9/</guid>
+      <description>Module importing In Python, you can import and use the content of another file using import filename, provided that it is in the same folder as the current file you are writing.
+# file1 content # def f1_function(): # return &amp;quot;Hello World&amp;quot; # file2 import file1 # Now we can use f1_function, because we imported file1 f1_function() Import Python Modules The Python import statement can be used to import Python modules from other files.</description>
+    </item>
+    
+    <item>
+      <title>Spring_blog8 - Python - Loop, function, strings</title>
+      <link>https://liuwei0915.github.io/posts/spring_blog8/</link>
+      <pubDate>Thu, 31 Mar 2022 17:15:21 -0700</pubDate>
+      
+      <guid>https://liuwei0915.github.io/posts/spring_blog8/</guid>
+      <description>Loop For loop A Python for loop can be used to iterate over a list of items and perform a set of actions on each item. The syntax of a for loop consists of assigning a temporary value to a variable on each successive iteration.
+When writing a for loop, remember to properly indent each action, otherwise an IndentationError will result.
+for &amp;lt;temporary variable&amp;gt; in &amp;lt;list variable&amp;gt;: &amp;lt;action statement&amp;gt; &amp;lt;action statement&amp;gt; #each num in nums will be printed below nums = [1,2,3,4,5] for num in nums: print(num) while Loops In Python, a while loop will repeatedly execute a code block as long as a condition evaluates to True.</description>
+    </item>
+    
+    <item>
+      <title>Spring_blog7 - Python - Getting Start basic</title>
       <link>https://liuwei0915.github.io/posts/spring_blog7/</link>
       <pubDate>Mon, 28 Feb 2022 12:46:51 -0800</pubDate>
       

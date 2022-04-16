@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Spring_blog9 - Python - Modules, Dictionaries, File | Wei Liu&#39;s Blog</title>
+  <link rel = 'canonical' href = 'https://liuwei0915.github.io/posts/spring_blog9/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Spring_blog9 - Python - Modules, Dictionaries, File" />
+<meta property="og:description" content="Module importing In Python, you can import and use the content of another file using import filename, provided that it is in the same folder as the current file you are writing.
+# file1 content # def f1_function(): # return &quot;Hello World&quot; # file2 import file1 # Now we can use f1_function, because we imported file1 f1_function() Import Python Modules The Python import statement can be used to import Python modules from other files." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://liuwei0915.github.io/posts/spring_blog9/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-01T13:22:38-07:00" />
+<meta property="article:modified_time" content="2022-04-01T13:22:38-07:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring_blog9 - Python - Modules, Dictionaries, File"/>
+<meta name="twitter:description" content="Module importing In Python, you can import and use the content of another file using import filename, provided that it is in the same folder as the current file you are writing.
+# file1 content # def f1_function(): # return &quot;Hello World&quot; # file2 import file1 # Now we can use f1_function, because we imported file1 f1_function() Import Python Modules The Python import statement can be used to import Python modules from other files."/>
+
+  
+  
+  
+  <link rel="stylesheet" href="https://liuwei0915.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://liuwei0915.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://liuwei0915.github.io/posts/spring_blog8/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://liuwei0915.github.io/posts/spring_blog10/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&text=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&title=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&is_video=false&description=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File&body=Check out this article: https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&title=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&title=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&name=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File&description=Module%20importing%20In%20Python%2c%20you%20can%20import%20and%20use%20the%20content%20of%20another%20file%20using%20import%20filename%2c%20provided%20that%20it%20is%20in%20the%20same%20folder%20as%20the%20current%20file%20you%20are%20writing.%0a%23%20file1%20content%20%23%20def%20f1_function%28%29%3a%20%23%20return%20%26quot%3bHello%20World%26quot%3b%20%23%20file2%20import%20file1%20%23%20Now%20we%20can%20use%20f1_function%2c%20because%20we%20imported%20file1%20f1_function%28%29%20Import%20Python%20Modules%20The%20Python%20import%20statement%20can%20be%20used%20to%20import%20Python%20modules%20from%20other%20files." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&t=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#module-importing">Module importing</a>
+      <ul>
+        <li><a href="#import-python-modules">Import Python Modules</a></li>
+        <li><a href="#date-and-time-in-python">Date and Time in Python</a></li>
+        <li><a href="#aliasing-with-as-keyword">Aliasing with ‘as’ keyword</a></li>
+        <li><a href="#randomrandint-and-randomchoice">random.randint() and random.choice()</a></li>
+      </ul>
+    </li>
+    <li><a href="#dictionaries">Dictionaries</a>
+      <ul>
+        <li><a href="#python-dictionaries">Python dictionaries</a></li>
+        <li><a href="#syntax-of-the-python-dictionary">Syntax of the Python dictionary</a></li>
+        <li><a href="#dictionary-value-types">Dictionary value types</a></li>
+        <li><a href="#accessing-and-writing-data-in-a-python-dictionary">Accessing and writing data in a Python dictionary</a></li>
+        <li><a href="#merging-dictionaries-with-the-update-method-in-python">Merging dictionaries with the .update() method in Python</a></li>
+        <li><a href="#dictionary-key-value-methods">Dictionary Key-Value Methods</a></li>
+        <li><a href="#get-method-for-dictionary">get() Method for Dictionary</a></li>
+        <li><a href="#the-pop-method-for-dictionaries-in-python">The .pop() Method for Dictionaries in Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#python-file-object">Python File Object</a>
+      <ul>
+        <li><a href="#python-read-method">Python Read Method</a></li>
+        <li><a href="#python-readline-method">Python Readline Method</a></li>
+        <li><a href="#parsing-json-files-to-dictionary">Parsing JSON files to dictionary</a></li>
+        <li><a href="#class-csvdictwriter">Class csv.DictWriter</a></li>
+        <li><a href="#python-append-to-file">Python Append To File</a></li>
+        <li><a href="#python-write-to-file">Python Write To File</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Spring_blog9 - Python - Modules, Dictionaries, File
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-04-01 13:22:38 -0700 PDT" itemprop="datePublished">2022-04-01</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h2 id="module-importing">Module importing</h2>
+<p>In Python, you can import and use the content of another file using import filename, provided that it is in the same folder as the current file you are writing.</p>
+<pre tabindex="0"><code># file1 content
+# def f1_function():
+#     return &quot;Hello World&quot;
+ 
+# file2
+import file1
+ 
+# Now we can use f1_function, because we imported file1
+f1_function()
+</code></pre><h3 id="import-python-modules">Import Python Modules</h3>
+<p>The Python import statement can be used to import Python modules from other files.</p>
+<p>Modules can be imported in three different ways: import module, from module import functions, or from module import *. from module import * is discouraged, as it can lead to a cluttered local namespace and can make the namespace unclear</p>
+<pre tabindex="0"><code># Three different ways to import modules:
+# First way
+import module
+module.function()
+ 
+# Second way
+from module import function
+function()
+ 
+# Third way
+from module import *
+function()
+</code></pre><h3 id="date-and-time-in-python">Date and Time in Python</h3>
+<p>Python provides a module named datetime to deal with dates and times.</p>
+<p>It allows you to set date ,time or both date and time using the date(),time()and datetime() functions respectively, after importing the datetime module .</p>
+<pre tabindex="0"><code>import datetime
+feb_16_2019 = datetime.date(year=2019, month=2, day=16)
+feb_16_2019 = datetime.date(2019, 2, 16)
+print(feb_16_2019) #2019-02-16
+ 
+time_13_48min_5sec = datetime.time(hour=13, minute=48, second=5)
+time_13_48min_5sec = datetime.time(13, 48, 5)
+print(time_13_48min_5sec) #13:48:05
+ 
+timestamp= datetime.datetime(year=2019, month=2, day=16, hour=13, minute=48, second=5)
+timestamp = datetime.datetime(2019, 2, 16, 13, 48, 5)
+print (timestamp) #2019-01-02 13:48:05
+</code></pre><h3 id="aliasing-with-as-keyword">Aliasing with ‘as’ keyword</h3>
+<p>In Python, the as keyword can be used to give an alternative name as an alias for a Python module or function.</p>
+<pre tabindex="0"><code># Aliasing matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
+plt.plot(x, y)
+ 
+# Aliasing calendar as c
+import calendar as c
+print(c.month_name[1])
+</code></pre><h3 id="randomrandint-and-randomchoice">random.randint() and random.choice()</h3>
+<p>In Python, the random module offers methods to simulate non-deterministic behavior in selecting a random number from a range and choosing a random item from a list.</p>
+<p>The randint() method provides a uniform random selection from a range of integers. The choice() method provides a uniform selection of a random element from a sequence.</p>
+<pre tabindex="0"><code># Returns a random integer N in a given range, such that start &lt;= N &lt;= end
+# random.randint(start, end)
+r1 = random.randint(0, 10)  
+print(r1) # Random integer where 0 &lt;= r1 &lt;= 10
+ 
+# Prints a random element from a sequence
+seq = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;]
+r2 = random.choice(seq)
+print(r2) # Random element in the sequence
+</code></pre><h2 id="dictionaries">Dictionaries</h2>
+<h3 id="python-dictionaries">Python dictionaries</h3>
+<p>A python dictionary is an unordered collection of items. It contains data as a set of key: value pairs.</p>
+<pre tabindex="0"><code>my_dictionary = {1: &quot;L.A. Lakers&quot;, 2: &quot;Houston Rockets&quot;}
+</code></pre><h3 id="syntax-of-the-python-dictionary">Syntax of the Python dictionary</h3>
+<p>The syntax for a Python dictionary begins with the left curly brace ({), ends with the right curly brace (}), and contains zero or more key : value items separated by commas (,). The key is separated from the value by a colon (:).</p>
+<pre tabindex="0"><code>roaster = {&quot;q1&quot;: &quot;Ashley&quot;, &quot;q2&quot;: &quot;Dolly&quot;}
+</code></pre><h3 id="dictionary-value-types">Dictionary value types</h3>
+<p>Python allows the values in a dictionary to be any type – string, integer, a list, another dictionary, boolean, etc. However, keys must always be an immutable data type, such as strings, numbers, or tuples.</p>
+<p>In the example code block, you can see that the keys are strings or numbers (int or float). The values, on the other hand, are many varied data types.</p>
+<pre tabindex="0"><code>dictionary = {
+  1: 'hello', 
+  'two': True, 
+  '3': [1, 2, 3], 
+  'Four': {'fun': 'addition'}, 
+  5.0: 5.5
+}
+</code></pre><h3 id="accessing-and-writing-data-in-a-python-dictionary">Accessing and writing data in a Python dictionary</h3>
+<pre tabindex="0"><code>my_dictionary = {&quot;song&quot;: &quot;Estranged&quot;, &quot;artist&quot;: &quot;Guns N' Roses&quot;}
+print(my_dictionary[&quot;song&quot;])
+my_dictionary[&quot;song&quot;] = &quot;Paradise City&quot;
+</code></pre><p>To illustrate this review card, the second line of the example code block shows the way to access the value using the key &ldquo;song&rdquo;. The third line of the code block overwrites the value that corresponds to the key &ldquo;song&rdquo;.</p>
+<h3 id="merging-dictionaries-with-the-update-method-in-python">Merging dictionaries with the .update() method in Python</h3>
+<p>Given two dictionaries that need to be combined, Python makes this easy with the .update() function.</p>
+<p>For dict1.update(dict2), the key-value pairs of dict2 will be written into the dict1 dictionary.</p>
+<p>For keys in both dict1 and dict2, the value in dict1 will be overwritten by the corresponding value in dict2.</p>
+<pre tabindex="0"><code>dict1 = {'color': 'blue', 'shape': 'circle'}
+dict2 = {'color': 'red', 'number': 42}
+ 
+dict1.update(dict2)
+ 
+# dict1 is now {'color': 'red', 'shape': 'circle', 'number': 42}
+</code></pre><h3 id="dictionary-key-value-methods">Dictionary Key-Value Methods</h3>
+<p>When trying to look at the information in a Python dictionary, there are multiple methods that return objects that contain the dictionary keys and values.</p>
+<ul>
+<li>.keys() returns the keys through a dict_keys object.</li>
+<li>.values() returns the values through a dict_values object.</li>
+<li>.items() returns both the keys and values through a dict_items object.</li>
+</ul>
+<pre tabindex="0"><code>ex_dict = {&quot;a&quot;: &quot;anteater&quot;, &quot;b&quot;: &quot;bumblebee&quot;, &quot;c&quot;: &quot;cheetah&quot;}
+ 
+ex_dict.keys()
+# dict_keys([&quot;a&quot;,&quot;b&quot;,&quot;c&quot;])
+ 
+ex_dict.values()
+# dict_values([&quot;anteater&quot;, &quot;bumblebee&quot;, &quot;cheetah&quot;])
+ 
+ex_dict.items()
+# dict_items([(&quot;a&quot;,&quot;anteater&quot;),(&quot;b&quot;,&quot;bumblebee&quot;),(&quot;c&quot;,&quot;cheetah&quot;)])
+</code></pre><h3 id="get-method-for-dictionary">get() Method for Dictionary</h3>
+<p>Python provides a .get() method to access a dictionary value if it exists. This method takes the key as the first argument and an optional default value as the second argument, and it returns the value for the specified key if key is in the dictionary. If the second argument is not specified and key is not found then None is returned.</p>
+<pre tabindex="0"><code># without default
+{&quot;name&quot;: &quot;Victor&quot;}.get(&quot;name&quot;)
+# returns &quot;Victor&quot;
+ 
+{&quot;name&quot;: &quot;Victor&quot;}.get(&quot;nickname&quot;)
+# returns None
+ 
+# with default
+{&quot;name&quot;: &quot;Victor&quot;}.get(&quot;nickname&quot;, &quot;nickname is not a key&quot;)
+# returns &quot;nickname is not a key&quot;
+</code></pre><h3 id="the-pop-method-for-dictionaries-in-python">The .pop() Method for Dictionaries in Python</h3>
+<p>Python dictionaries can remove key-value pairs with the .pop() method. The method takes a key as an argument and removes it from the dictionary. At the same time, it also returns the value that it removes from the dictionary.</p>
+<pre tabindex="0"><code>famous_museums = {'Washington': 'Smithsonian Institution', 'Paris': 'Le Louvre', 'Athens': 'The Acropolis Museum'}
+famous_museums.pop('Athens')
+print(famous_museums) # {'Washington': 'Smithsonian Institution', 'Paris': 'Le Louvre'}
+</code></pre><h2 id="python-file-object">Python File Object</h2>
+<p>A Python file object is created when a file is opened with the open() function. You can associate this file object with a variable when you open a file using the with and as keywords. For example:</p>
+<pre tabindex="0"><code>with open('somefile.txt') as file_object:
+print(file_object)
+// output &lt;_io.TextIOWrapper name='somefile.txt' mode='r' encoding='UTF-8'&gt;
+</code></pre><h3 id="python-read-method">Python Read Method</h3>
+<p>After a file is opened with open() returning a file object, call the .read() method of the file object to return the entire file content as a Python string. Executing the following Python code:</p>
+<pre tabindex="0"><code>with open('mystery.txt') as text_file:
+  text_data = text_file.read()
+print(text_data)
+</code></pre><p>Output:</p>
+<pre tabindex="0"><code>Mystery solved. 
+Congratulations!
+</code></pre><h3 id="python-readline-method">Python Readline Method</h3>
+<p>To read only one line instead of multiple lines in a Python file, use the method .readline() on a file object that is returned from the open() function. Every subsequent .readline() will extract the next line in the file if it exists.</p>
+<pre tabindex="0"><code>with open('story.txt') as story_object:
+  print(story_object.readline())
+//will print only the first line in story.txt file
+</code></pre><p>another example:</p>
+<pre tabindex="0"><code>with open('lines.txt') as file_object:
+  file_data = file_object.readlines()
+print(file_data)
+for line in file_data:
+  print(line)
+</code></pre><p>Output:</p>
+<pre tabindex="0"><code>1. Learn Python.
+ 
+2. Work hard.
+ 
+3. Graduate.
+</code></pre><h3 id="parsing-json-files-to-dictionary">Parsing JSON files to dictionary</h3>
+<p>JSON format is used to store key value pairs. Python’s json module allows reading such data format and parsing it to a dictionary. The json.load function takes a file object as an argument and returns the data in a dictionary format.</p>
+<pre tabindex="0"><code># Use json.load with an opened file object to read the contents into a Python dictionary.
+ 
+# Contents of file.json
+# { 'userId': 10 }
+ 
+ 
+import json
+with open('file.json') as json_file:
+  python_dict = json.load(json_file)
+  
+print(python_dict.get('userId'))
+# Prints 10
+</code></pre><h3 id="class-csvdictwriter">Class csv.DictWriter</h3>
+<p>In Python, the csv module implements classes to read and write tabular data in CSV format. It has a class DictWriter which operates like a regular writer but maps a dictionary onto output rows. The keys of the dictionary are column names while values are actual data.</p>
+<p>The csv.DictWriter constructor takes two arguments. The first is the open file handler that the CSV is being written to. The second named parameter, fieldnames, is a list of field names that the CSV is going to handle.</p>
+<pre tabindex="0"><code># An example of csv.DictWriter
+import csv
+ 
+with open('companies.csv', 'w') as csvfile:
+  fieldnames = ['name', 'type']
+  writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+  writer.writeheader()
+  writer.writerow({'name': 'Codecademy', 'type': 'Learning'})
+  writer.writerow({'name': 'Google', 'type': 'Search'})
+ 
+&quot;&quot;&quot;
+After running the above code, companies.csv will contain the following information:
+ 
+name,type
+Codecademy,Learning
+Google,Search
+&quot;&quot;&quot;
+</code></pre><h3 id="python-append-to-file">Python Append To File</h3>
+<p>Writing to an opened file with the &lsquo;w&rsquo; flag overwrites all previous content in the file. To avoid this, we can append to a file instead. Use the &lsquo;a&rsquo; flag as the second argument to open(). If a file doesn’t exist, it will be created for append mode.</p>
+<pre tabindex="0"><code>with open('shopping.txt', 'a') as shop:
+  shop.write('Tomatoes, cucumbers, celery\n')
+</code></pre><h3 id="python-write-to-file">Python Write To File</h3>
+<p>By default, a file when opened with open() is only for reading. A second argument &lsquo;r&rsquo; is passed to it by default. To write to a file, first open the file with write permission via the &lsquo;w&rsquo; argument. Then use the .write() method to write to the file. If the file already exists, all prior content will be overwritten.</p>
+<pre tabindex="0"><code>with open('diary.txt','w') as diary:
+  diary.write('Special events for today')
+</code></pre>
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#module-importing">Module importing</a>
+      <ul>
+        <li><a href="#import-python-modules">Import Python Modules</a></li>
+        <li><a href="#date-and-time-in-python">Date and Time in Python</a></li>
+        <li><a href="#aliasing-with-as-keyword">Aliasing with ‘as’ keyword</a></li>
+        <li><a href="#randomrandint-and-randomchoice">random.randint() and random.choice()</a></li>
+      </ul>
+    </li>
+    <li><a href="#dictionaries">Dictionaries</a>
+      <ul>
+        <li><a href="#python-dictionaries">Python dictionaries</a></li>
+        <li><a href="#syntax-of-the-python-dictionary">Syntax of the Python dictionary</a></li>
+        <li><a href="#dictionary-value-types">Dictionary value types</a></li>
+        <li><a href="#accessing-and-writing-data-in-a-python-dictionary">Accessing and writing data in a Python dictionary</a></li>
+        <li><a href="#merging-dictionaries-with-the-update-method-in-python">Merging dictionaries with the .update() method in Python</a></li>
+        <li><a href="#dictionary-key-value-methods">Dictionary Key-Value Methods</a></li>
+        <li><a href="#get-method-for-dictionary">get() Method for Dictionary</a></li>
+        <li><a href="#the-pop-method-for-dictionaries-in-python">The .pop() Method for Dictionaries in Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#python-file-object">Python File Object</a>
+      <ul>
+        <li><a href="#python-read-method">Python Read Method</a></li>
+        <li><a href="#python-readline-method">Python Readline Method</a></li>
+        <li><a href="#parsing-json-files-to-dictionary">Parsing JSON files to dictionary</a></li>
+        <li><a href="#class-csvdictwriter">Class csv.DictWriter</a></li>
+        <li><a href="#python-append-to-file">Python Append To File</a></li>
+        <li><a href="#python-write-to-file">Python Write To File</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&text=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&title=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&is_video=false&description=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File&body=Check out this article: https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&title=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&title=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&name=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File&description=Module%20importing%20In%20Python%2c%20you%20can%20import%20and%20use%20the%20content%20of%20another%20file%20using%20import%20filename%2c%20provided%20that%20it%20is%20in%20the%20same%20folder%20as%20the%20current%20file%20you%20are%20writing.%0a%23%20file1%20content%20%23%20def%20f1_function%28%29%3a%20%23%20return%20%26quot%3bHello%20World%26quot%3b%20%23%20file2%20import%20file1%20%23%20Now%20we%20can%20use%20f1_function%2c%20because%20we%20imported%20file1%20f1_function%28%29%20Import%20Python%20Modules%20The%20Python%20import%20statement%20can%20be%20used%20to%20import%20Python%20modules%20from%20other%20files." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fliuwei0915.github.io%2fposts%2fspring_blog9%2f&t=Spring_blog9%20-%20Python%20-%20Modules%2c%20Dictionaries%2c%20File" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Wei Liu&#39;s Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
